@@ -58,8 +58,8 @@ const main = async () => {
 <h2>Join the Community</h2>
 <p>Connect with millions of learners and native speakers worldwide. Practice with real people, join study groups, and share your progress with friends.</p>
 
-<h2>8 Languages</h2>
-<p>Choose from Spanish, French, Japanese, Italian, and more languages. Our comprehensive course library covers everything from beginner basics to advanced conversation.</p>
+<h2>5 vernacular languages</h2>
+<p>Choose from Fang, Bubi, Ndowe, Bisio, and Fadambo. Our comprehensive course library covers everything from beginner basics to advanced conversation.</p>
 
 <h2>Proven Results</h2>
 <p>See real progress with our scientifically-backed teaching methods. Studies show that learners using Mbolo improve their language skills 40% faster than traditional methods.</p>
@@ -74,7 +74,7 @@ const main = async () => {
 </ul>
 
 <p>Start your language learning journey today and unlock a world of possibilities!</p>`,
-        metaDescription: "Discover Mbolo's powerful features: AI-powered learning, gamification, 8 languages, and proven results.",
+        metaDescription: "Discover Mbolo's powerful features: AI-powered learning, gamification, 5 vernacular languages, and proven results.",
         status: "published"
       },
       {
@@ -97,7 +97,7 @@ const main = async () => {
   <li>Gamified lessons that keep you motivated</li>
   <li>Quick 5-minute lessons that fit any schedule</li>
   <li>Free to use with optional premium features</li>
-  <li>8 languages to choose from</li>
+  <li>5 vernacular languages to choose from</li>
 </ul>
 
 <p>Join our community of over 10 million learners today!</p>`,

@@ -27,8 +27,8 @@ export default {
   "features.gamified.description": "Gagnez des points, débloquez des réalisations et rivalisez avec vos amis pendant l'apprentissage.",
   "features.community.title": "Rejoignez la Communauté",
   "features.community.description": "Connectez-vous avec des millions d'apprenants et de locuteurs natifs dans le monde entier.",
-  "features.languages.title": "8 Langues",
-  "features.languages.description": "Choisissez parmi l'espagnol, le français, le japonais, l'italien et plus encore.",
+  "features.languages.title": "5 langues vernaculaires",
+  "features.languages.description": "Choisissez entre le Fang, le Bubi, le Ndowe, le Bisio et le Fadambo.",
   "features.results.title": "Résultats Prouvés",
   "features.results.description": "Constatez des progrès réels avec nos méthodes d'enseignement scientifiquement validées.",
   

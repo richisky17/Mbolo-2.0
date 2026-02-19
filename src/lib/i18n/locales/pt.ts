@@ -27,7 +27,7 @@ export default {
   "features.gamified.description": "Ganhe pontos, desbloqueie conquistas e compita com amigos enquanto aprende.",
   "features.community.title": "Junte-se à Comunidade",
   "features.community.description": "Conecte-se com milhões de estudantes e falantes nativos em todo o mundo.",
-  "features.languages.title": "8 Idiomas",
+  "features.languages.title": "5 lenguas vernáculas",
   "features.languages.description": "Escolha entre espanhol, francês, japonês, italiano e mais idiomas.",
   "features.results.title": "Resultados Comprovados",
   "features.results.description": "Veja progresso real com nossos métodos de ensino cientificamente comprovados.",

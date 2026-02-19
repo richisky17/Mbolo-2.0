@@ -27,8 +27,8 @@ export default {
   "features.gamified.description": "Gana puntos, desbloquea logros y compite con amigos mientras aprendes.",
   "features.community.title": "Únete a la Comunidad",
   "features.community.description": "Conéctate con millones de estudiantes y hablantes nativos en todo el mundo.",
-  "features.languages.title": "8 Idiomas",
-  "features.languages.description": "Elige entre español, francés, japonés, italiano y más idiomas.",
+  "features.languages.title": "5 lenguas vernáculas  ",
+  "features.languages.description": "Elige entre Fang, Bubi, Ndowe, Bisio y el Fadambo",
   "features.results.title": "Resultados Comprobados",
   "features.results.description": "Ve el progreso real con nuestros métodos de enseñanza respaldados científicamente.",
   
