@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lango - Changelog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .version {
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 10px;
+            background: #f9f9f9;
+            border-left: 5px solid #667eea;
+        }
+
+        .version-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .version-number {
+            font-size: 1.8em;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .version-date {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .version-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .badge-new {
+            background: #4caf50;
+            color: white;
+        }
+
+        .badge-improvement {
+            background: #2196F3;
+            color: white;
+        }
+
+        .badge-fix {
+            background: #ff9800;
+            color: white;
+        }
+
+        .changes {
+            list-style: none;
+            padding: 0;
+        }
+
+        .changes li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .changes li:before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: #667eea;
+            font-size: 1.5em;
+            line-height: 1;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f5f5f5;
+            color: #666;
+        }
+
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .note {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #0d47a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Changelog</h1>
+            <p>Version history and updates for Lango</p>
+        </header>
+
+        <div class="content">
+            <!-- Version 1.0.0 -->
+            <div class="version">
+                <div class="version-header">
+                    <div>
+                        <span class="version-number">Version 1.0.0</span>
+                        <span class="version-badge badge-new">Initial Release</span>
+                    </div>
+                    <span class="version-date">October 2024</span>
+                </div>
+
+                <div class="section-title">✨ Features</div>
+                <ul class="changes">
+                    <li><strong>Authentication System</strong> - Complete user authentication with Clerk integration</li>
+                    <li><strong>Course Management</strong> - Support for multiple language courses (Spanish, Italian, French, Croatian)</li>
+                    <li><strong>Interactive Challenges</strong> - Two challenge types: SELECT (multiple choice) and ASSIST (word bank)</li>
+                    <li><strong>Hearts System</strong> - Gamification with hearts mechanic (lose hearts on wrong answers)</li>
+                    <li><strong>Points & Progress</strong> - Track user progress and earn points for correct answers</li>
+                    <li><strong>Leaderboard</strong> - Competitive ranking showing top 10 users</li>
+                    <li><strong>Quest System</strong> - Daily and weekly quests with milestones</li>
+                    <li><strong>Shop System</strong> - Purchase hearts with points or buy unlimited subscription</li>
+                    <li><strong>Stripe Integration</strong> - Secure payment processing for subscriptions</li>
+                    <li><strong>Admin Panel</strong> - Comprehensive React Admin panel for content management</li>
+                    <li><strong>Practice Mode</strong> - Review completed lessons without losing hearts</li>
+                    <li><strong>Audio Support</strong> - Pronunciation audio for language learning</li>
+                    <li><strong>Responsive Design</strong> - Mobile-friendly interface with sidebar and mobile header</li>
+                    <li><strong>Progress Tracking</strong> - Visual progress indicators and completion status</li>
+                    <li><strong>Modals & Notifications</strong> - Exit modal, hearts modal, practice modal, and toast notifications</li>
+                </ul>
+
+                <div class="section-title">🛠️ Technical Stack</div>
+                <ul class="changes">
+                    <li><strong>Next.js 14</strong> - App Router with Server Components</li>
+                    <li><strong>React 18</strong> - Latest React features and hooks</li>
+                    <li><strong>TypeScript</strong> - Full type safety</li>
+                    <li><strong>Tailwind CSS</strong> - Modern utility-first styling</li>
+                    <li><strong>Drizzle ORM</strong> - Type-safe database queries</li>
+                    <li><strong>PostgreSQL</strong> - Reliable database with Neon hosting</li>
+                    <li><strong>Clerk</strong> - Authentication and user management</li>
+                    <li><strong>Stripe</strong> - Payment processing</li>
+                    <li><strong>React Admin</strong> - Admin panel framework</li>
+                    <li><strong>Zustand</strong> - Lightweight state management</li>
+                    <li><strong>Sonner</strong> - Beautiful toast notifications</li>
+                </ul>
+
+                <div class="section-title">🗄️ Database Schema</div>
+                <ul class="changes">
+                    <li><strong>Courses Table</strong> - Store language courses</li>
+                    <li><strong>Units Table</strong> - Organize courses into units</li>
+                    <li><strong>Lessons Table</strong> - Individual lessons within units</li>
+                    <li><strong>Challenges Table</strong> - Learning challenges/questions</li>
+                    <li><strong>Challenge Options Table</strong> - Answer choices for challenges</li>
+                    <li><strong>Challenge Progress Table</strong> - Track user's challenge completion</li>
+                    <li><strong>User Progress Table</strong> - Overall user progress and stats</li>
+                    <li><strong>User Subscription Table</strong> - Manage Stripe subscriptions</li>
+                </ul>
+
+                <div class="section-title">📱 Pages & Routes</div>
+                <ul class="changes">
+                    <li><strong>Marketing Page</strong> - Landing page with hero section</li>
+                    <li><strong>Authentication Pages</strong> - Sign in and sign up with Clerk</li>
+                    <li><strong>Learn Page</strong> - Main dashboard with units and lessons</li>
+                    <li><strong>Courses Page</strong> - Browse and select language courses</li>
+                    <li><strong>Lesson Page</strong> - Interactive lesson with challenges</li>
+                    <li><strong>Leaderboard Page</strong> - Top users ranking</li>
+                    <li><strong>Quests Page</strong> - Quest tracking and milestones</li>
+                    <li><strong>Shop Page</strong> - Purchase hearts and subscriptions</li>
+                    <li><strong>Admin Panel</strong> - Content management system</li>
+                </ul>
+
+                <div class="section-title">🎨 UI Components</div>
+                <ul class="changes">
+                    <li><strong>Sidebar Navigation</strong> - Desktop navigation with icons</li>
+                    <li><strong>Mobile Header</strong> - Responsive mobile navigation</li>
+                    <li><strong>Course Cards</strong> - Beautiful course selection cards</li>
+                    <li><strong>Lesson Buttons</strong> - Interactive lesson progress buttons</li>
+                    <li><strong>Challenge Cards</strong> - Engaging challenge interface</li>
+                    <li><strong>Progress Bars</strong> - Visual progress indicators</li>
+                    <li><strong>Modals</strong> - Exit, hearts refill, and practice modals</li>
+                    <li><strong>Feed Wrapper</strong> - Consistent content layout</li>
+                    <li><strong>Sticky Wrapper</strong> - Sticky sidebar elements</li>
+                </ul>
+
+                <div class="section-title">🔧 Admin Features</div>
+                <ul class="changes">
+                    <li><strong>Course Management</strong> - Create, edit, delete courses</li>
+                    <li><strong>Unit Management</strong> - Organize course structure</li>
+                    <li><strong>Lesson Management</strong> - Add and edit lessons</li>
+                    <li><strong>Challenge Management</strong> - Create questions and quizzes</li>
+                    <li><strong>Challenge Options</strong> - Manage answer choices with images and audio</li>
+                    <li><strong>User-based Access Control</strong> - Restrict admin access by User ID</li>
+                </ul>
+
+                <div class="section-title">📚 Documentation</div>
+                <ul class="changes">
+                    <li><strong>Complete Documentation</strong> - Comprehensive HTML documentation</li>
+                    <li><strong>Quick Start Guide</strong> - Get started in under 10 minutes</li>
+                    <li><strong>Installation Guide</strong> - Step-by-step setup instructions</li>
+                    <li><strong>Configuration Guide</strong> - Environment variable setup</li>
+                    <li><strong>Customization Guide</strong> - Branding and content customization</li>
+                    <li><strong>Deployment Guide</strong> - Deploy to Vercel, Netlify, or VPS</li>
+                    <li><strong>Troubleshooting Section</strong> - Common issues and solutions</li>
+                    <li><strong>API Reference</strong> - Complete API endpoint documentation</li>
+                </ul>
+
+                <div class="section-title">🔐 Security</div>
+                <ul class="changes">
+                    <li><strong>Secure Authentication</strong> - Clerk-powered auth with session management</li>
+                    <li><strong>Protected Routes</strong> - Middleware-based route protection</li>
+                    <li><strong>Admin Access Control</strong> - User ID-based admin verification</li>
+                    <li><strong>Stripe Security</strong> - Webhook signature verification</li>
+                    <li><strong>Environment Variables</strong> - Secure configuration management</li>
+                </ul>
+
+                <div class="note">
+                    <strong>🎉 Thank you for purchasing Lango!</strong><br>
+                    This initial release includes everything you need to launch a professional language learning platform. 
+                    We're committed to continuous improvement and will release updates based on user feedback.
+                </div>
+            </div>
+
+            <!-- Version 2.0.0 -->
+            <div class="version">
+                <div class="version-header">
+                    <div>
+                        <span class="version-number">Version 2.0.0</span>
+                        <span class="version-badge badge-new">Major Release</span>
+                    </div>
+                    <span class="version-date">October 2025</span>
+                </div>
+
+                <div class="section-title">✨ New Features</div>
+                <ul class="changes">
+                    <li><strong>Customized Clerk Login/Signup Forms</strong> - Beautiful emerald/teal themed authentication forms
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Gradient background matching homepage design</li>
+                            <li>Emerald/teal gradient buttons with hover effects</li>
+                            <li>Custom input fields with emerald focus states</li>
+                            <li>Rounded corners and modern shadows</li>
+                            <li>Gradient text for titles</li>
+                            <li>Responsive layout for all screen sizes</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clerk Development Banner Removal</strong> - Automatic hiding of "Secured by Clerk" development banner
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>CSS-based banner hiding</li>
+                            <li>Smart detection to avoid interfering with modals</li>
+                            <li>Client-side component for dynamic banner removal</li>
+                        </ul>
+                    </li>
+                    <li><strong>Functional Header Navigation</strong> - Features, About, and Contact links now properly route to their respective pages</li>
+                    <li><strong>Clickable Logo</strong> - Logo and mascot in header now link to home page for better navigation</li>
+                    <li><strong>Features Page</strong> - Created dedicated Features page accessible at <code>/features</code> with CMS management support</li>
+                    <li><strong>Social Media Management</strong> - Complete admin panel integration for managing social media links
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Database table for storing social media links (platform, URL, display order)</li>
+                            <li>Admin panel interface with full CRUD operations</li>
+                            <li>Support for multiple platforms: Facebook, Twitter, Instagram, YouTube, LinkedIn, TikTok, Discord</li>
+                            <li>Dynamic display order control</li>
+                        </ul>
+                    </li>
+                    <li><strong>Footer Integration</strong> - Footer now dynamically displays social media links from database
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Automatic icon rendering based on platform</li>
+                            <li>Responsive icon layout</li>
+                            <li>Links open in new tabs with proper security attributes</li>
+                        </ul>
+                    </li>
+                    <li><strong>RESTful API</strong> - Complete API endpoints for social media links management
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>GET /api/social-media-links - Public endpoint for fetching links</li>
+                            <li>POST /api/social-media-links - Admin-only endpoint for creating links</li>
+                            <li>PUT /api/social-media-links/[id] - Admin-only endpoint for updating links</li>
+                            <li>DELETE /api/social-media-links/[id] - Admin-only endpoint for deleting links</li>
+                        </ul>
+                    </li>
+                    <li><strong>Features Page Content</strong> - Seeded default Features page with comprehensive content about platform features</li>
+                    <li><strong>Contact Page Content</strong> - Seeded default Contact page with contact information and social links</li>
+                </ul>
+
+                <div class="section-title">🔧 Improvements</div>
+                <ul class="changes">
+                    <li><strong>Language Count Update</strong> - Updated from "50+ Languages" to "8 Languages" to reflect actual platform offerings
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Updated across all 8 locale files (English, Spanish, French, German, Italian, Portuguese, Japanese, Chinese)</li>
+                            <li>Updated homepage statistics section</li>
+                            <li>Updated Features page content</li>
+                            <li>Updated CMS seed scripts</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mobile Header Responsiveness</strong> - Enhanced mobile header responsiveness
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Reduced header height on mobile (h-16 vs h-20)</li>
+                            <li>Smaller logo and text sizes on mobile screens</li>
+                            <li>Improved spacing and padding for mobile devices</li>
+                            <li>Responsive button sizes and text</li>
+                            <li>Better handling of overflow and truncation</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mobile Apps Section</strong> - Fixed mobile layout issues
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Form inputs and buttons now stack vertically on mobile</li>
+                            <li>App store badges are full-width on mobile</li>
+                            <li>Early access form properly responsive with vertical stacking</li>
+                            <li>Reduced padding and text sizes for mobile screens</li>
+                            <li>Improved touch targets and spacing</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="section-title">🛠️ Bug Fixes</div>
+                <ul class="changes">
+                    <li><strong>Navigation Issues</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Fixed header navigation links using anchor tags instead of proper routing</li>
+                            <li>Fixed logo not being clickable</li>
+                            <li>Fixed Features, About, and Contact pages not being accessible</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mobile Layout Issues</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Fixed mobile apps section breaking on small screens</li>
+                            <li>Fixed early access form buttons and inputs overflowing on mobile</li>
+                            <li>Fixed header elements overlapping on mobile devices</li>
+                            <li>Fixed social media icons display issues</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="section-title">🗄️ Database Updates</div>
+                <ul class="changes">
+                    <li><strong>New Table: social_media_links</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Platform field for social media platform type</li>
+                            <li>URL field for social media profile links</li>
+                            <li>Order field for controlling display order</li>
+                            <li>Timestamps for created_at and updated_at</li>
+                        </ul>
+                    </li>
+                    <li><strong>Migration Scripts</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>create-social-media-links-table.ts - Creates social_media_links table</li>
+                            <li>seed-social-media-links.ts - Seeds default social media links</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="note">
+                    <strong>🚀 What's New in 2.0.0</strong><br>
+                    This release includes major improvements to navigation, social media management, mobile responsiveness, and content accuracy. 
+                    All header navigation links now work properly, and you can manage social media links directly from the admin panel!
+                </div>
+            </div>
+
+            <!-- Planned Updates -->
+            <div class="version" style="border-left-color: #9e9e9e; opacity: 0.8;">
+                <div class="version-header">
+                    <div>
+                        <span class="version-number" style="color: #9e9e9e;">Version 1.1.0</span>
+                        <span class="version-badge" style="background: #9e9e9e;">Planned</span>
+                    </div>
+                    <span class="version-date" style="background: #9e9e9e;">TBA</span>
+                </div>
+
+                <div class="section-title">🚀 Planned Features</div>
+                <ul class="changes">
+                    <li>Additional challenge types (FILL_IN_THE_BLANK, MATCHING)</li>
+                    <li>User profile page with detailed statistics</li>
+                    <li>Achievement system with badges</li>
+                    <li>Social features (follow users, share progress)</li>
+                    <li>Dark mode support</li>
+                    <li>Multi-language UI (i18n support)</li>
+                    <li>Advanced analytics dashboard</li>
+                    <li>Bulk import/export for content</li>
+                    <li>Mobile app (React Native)</li>
+                </ul>
+
+                <div class="note">
+                    <strong>💡 Have suggestions?</strong><br>
+                    We'd love to hear your feedback! Contact us through CodeCanyon with your feature requests and improvement ideas.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>🦜 Lango - Interactive Language Learning Platform</strong></p>
+            <p style="margin-top: 10px;">
+                <a href="index.html">Full Documentation</a> | 
+                <a href="quick-start.html">Quick Start</a> | 
+                <a href="CHANGELOG.html">Changelog</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

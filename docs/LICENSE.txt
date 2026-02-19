@@ -1,0 +1,192 @@
+================================================================================
+Lango - Interactive Language Learning Platform
+License Agreement
+================================================================================
+
+Copyright (c) 2024 Lango. All rights reserved.
+
+--------------------------------------------------------------------------------
+LICENSE TERMS
+--------------------------------------------------------------------------------
+
+This is a legal agreement between you (the purchaser) and the author of Lango.
+By purchasing and using this product, you agree to the following terms:
+
+1. LICENSE GRANT
+   You are granted a non-exclusive, non-transferable license to use Lango
+   according to the license type purchased:
+
+   REGULAR LICENSE:
+   - Use in a single end product (website/application)
+   - End product must not be sold or distributed
+   - End users cannot be charged for accessing the end product
+   
+   EXTENDED LICENSE:
+   - Use in a single end product (website/application)
+   - End product CAN be sold or end users CAN be charged
+   - Includes all Regular License rights
+
+2. YOU CAN:
+   ✓ Modify the source code to suit your needs
+   ✓ Use the product in commercial projects (based on license type)
+   ✓ Create derivative works based on the product
+   ✓ Use the product for client projects (one license per project)
+   ✓ Remove author credits from the code
+
+3. YOU CANNOT:
+   ✗ Resell, redistribute, or sublicense the source code
+   ✗ Share your purchased files with others
+   ✗ Use the product in multiple end products with one license
+   ✗ Claim the product as your own work
+   ✗ Create a competing product using the source code
+   ✗ Use the product in violation of any applicable laws
+
+4. OWNERSHIP
+   The source code remains the intellectual property of the author.
+   You own the license to use the product according to these terms.
+
+5. UPDATES & SUPPORT
+   - Updates: Free updates for bug fixes and improvements
+   - Support: Support is provided through CodeCanyon for 6 months
+   - Extended support can be purchased separately
+
+6. WARRANTY DISCLAIMER
+   This product is provided "AS IS" without warranty of any kind, either
+   expressed or implied, including but not limited to the implied warranties
+   of merchantability and fitness for a particular purpose.
+
+7. LIMITATION OF LIABILITY
+   The author shall not be liable for any damages arising from the use or
+   inability to use this product, even if the author has been advised of
+   the possibility of such damages.
+
+8. THIRD-PARTY SERVICES
+   This product integrates with third-party services (Clerk, Stripe, Neon).
+   You are responsible for complying with their respective terms of service
+   and any costs associated with using these services.
+
+9. REFUND POLICY
+   Refunds are handled according to Envato's refund policy.
+   Digital products are generally non-refundable after download.
+
+10. TERMINATION
+    This license is effective until terminated. Your rights under this license
+    will terminate automatically without notice if you fail to comply with any
+    of its terms.
+
+11. GOVERNING LAW
+    This agreement shall be governed by and construed in accordance with the
+    laws applicable in the author's jurisdiction.
+
+--------------------------------------------------------------------------------
+THIRD-PARTY LICENSES
+--------------------------------------------------------------------------------
+
+This product uses open-source libraries and frameworks, each with their own
+licenses:
+
+- Next.js (MIT License)
+- React (MIT License)
+- TypeScript (Apache License 2.0)
+- Tailwind CSS (MIT License)
+- Drizzle ORM (Apache License 2.0)
+- Other dependencies as listed in package.json
+
+All third-party libraries retain their original licenses. Please review the
+respective licenses for each dependency.
+
+--------------------------------------------------------------------------------
+REQUIRED THIRD-PARTY SERVICES
+--------------------------------------------------------------------------------
+
+This product requires accounts with the following services:
+
+1. Clerk (https://clerk.com)
+   - Purpose: User authentication
+   - Free tier: Available
+   - Terms: https://clerk.com/terms
+
+2. Neon (https://neon.tech)
+   - Purpose: PostgreSQL database
+   - Free tier: Available
+   - Terms: https://neon.tech/terms
+
+3. Stripe (https://stripe.com) - OPTIONAL
+   - Purpose: Payment processing
+   - Free tier: Available
+   - Terms: https://stripe.com/legal
+
+You are responsible for:
+- Creating accounts with these services
+- Complying with their terms of service
+- Any costs associated with paid tiers
+- Data privacy and security compliance
+
+--------------------------------------------------------------------------------
+PRIVACY & DATA
+--------------------------------------------------------------------------------
+
+This product processes user data including:
+- User authentication information (managed by Clerk)
+- Learning progress and statistics
+- Payment information (processed by Stripe)
+
+As the operator of an end product using Lango, you are responsible for:
+- Implementing a privacy policy
+- Complying with GDPR, CCPA, and other data protection laws
+- Obtaining necessary user consents
+- Securing user data appropriately
+
+--------------------------------------------------------------------------------
+SUPPORT & CONTACT
+--------------------------------------------------------------------------------
+
+For support, questions, or license inquiries:
+- Visit your CodeCanyon purchase page
+- Use the support tab to submit tickets
+- Include your purchase code for verification
+
+Support includes:
+✓ Bug fixes and critical issues
+✓ Installation guidance
+✓ Configuration assistance
+✓ Basic customization questions
+
+Support does NOT include:
+✗ Custom feature development
+✗ Third-party service setup (Clerk, Stripe, etc.)
+✗ Server configuration or hosting
+✗ Integration with other products
+
+--------------------------------------------------------------------------------
+ACKNOWLEDGMENTS
+--------------------------------------------------------------------------------
+
+Thank you for purchasing Lango! We appreciate your business and hope this
+product helps you create an amazing language learning experience.
+
+If you're satisfied with the product, we'd greatly appreciate:
+- A positive rating on CodeCanyon
+- A detailed review sharing your experience
+- Recommending Lango to others
+
+Your feedback helps us improve and create better products!
+
+--------------------------------------------------------------------------------
+UPDATES & CHANGELOG
+--------------------------------------------------------------------------------
+
+For version history and updates, see CHANGELOG.html in the docs folder.
+
+--------------------------------------------------------------------------------
+
+Last Updated: October 2024
+License Version: 1.0
+
+For the most current version of this license, please check the documentation
+included with the latest version of the product.
+
+================================================================================
+END OF LICENSE AGREEMENT
+================================================================================
+
