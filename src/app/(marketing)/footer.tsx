@@ -56,11 +56,11 @@ const Footer = () => {
   };
   
   const languages = [
-    { name: t("footer.languages.spanish"), flag: "/es.svg", popular: true },
-    { name: t("footer.languages.french"), flag: "/fr.svg", popular: true },
-    { name: t("footer.languages.japanese"), flag: "/jp.svg", popular: false },
-    { name: t("footer.languages.italian"), flag: "/it.svg", popular: false },
-    { name: t("footer.languages.croatian"), flag: "/hr.svg", popular: false },
+    { name: t("footer.languages.spanish"), flag: "/fang.png", popular: true },
+    { name: t("footer.languages.french"), flag: "/bubi.png", popular: true },
+    { name: t("footer.languages.japanese"), flag: "/ndowe.png", popular: false },
+    { name: t("footer.languages.italian"), flag: "/bisio.png", popular: false },
+    { name: t("footer.languages.croatian"), flag: "/annobon.png", popular: false },
   ];
 
   return (

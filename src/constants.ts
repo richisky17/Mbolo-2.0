@@ -5,23 +5,23 @@ export const POINTS_PER_CHALLENGE = 10;
 
 export const quests = [
   {
-    title: "Earn 20 XP",
+    title: "Gana 20 XP",
     value: 20,
   },
   {
-    title: "Earn 50 XP",
+    title: "Gana 50 XP",
     value: 50,
   },
   {
-    title: "Earn 100 XP",
+    title: "Gana 100 XP",
     value: 100,
   },
   {
-    title: "Earn 500 XP",
+    title: "Gana 500 XP",
     value: 500,
   },
   {
-    title: "Earn 1000 XP",
+    title: "Gana 1000 XP",
     value: 1000,
   },
 ];
@@ -29,27 +29,27 @@ export const quests = [
 export const sidebarItems = [
   {
     href: "/learn",
-    label: "learn",
+    label: "Aprender",
     iconSrc: "/learn.svg",
   },
   {
     href: "/pronunciation",
-    label: "pronunciation",
+    label: "Prononciation",
     iconSrc: "/quests.svg", // You can add a pronunciation icon later
   },
   {
     href: "/leaderboard",
-    label: "leaderboard",
+    label: "Clasificación",
     iconSrc: "/leaderboard.svg",
   },
   {
     href: "/quests",
-    label: "quests",
+    label: "Misiones",
     iconSrc: "/quests.svg",
   },
   {
     href: "/shop",
-    label: "shop",
+    label: "Tienda",
     iconSrc: "/shop.svg",
   },
 ];

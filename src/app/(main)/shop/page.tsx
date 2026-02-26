@@ -36,11 +36,11 @@ const ShopPage = async () => {
           <Image src="/shop.svg" alt="Shop" height={90} width={90} />
 
           <h1 className="text-center font-bold text-neutral-800 text-2xl my-6">
-            Shop
+            Tienda
           </h1>
 
           <p className="text-muted-foreground text-center text-balance text-lg mb-6">
-            Spend your points on cool stuff.
+            Gasta tus puntos en cosas geniales.
           </p>
 
           <Items

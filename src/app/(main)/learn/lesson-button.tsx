@@ -72,7 +72,7 @@ const LessonButton = ({
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-full blur-xl opacity-60 animate-pulse" />
             
             <div className="absolute -top-6 left-2.5 border-2 border-emerald-400 font-bold uppercase text-emerald-600 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl animate-bounce tracking-wide z-10 px-3 py-2.5 shadow-lg backdrop-blur-sm">
-              Start
+              Empezar
               <div className="absolute left-1/2 -bottom-2 w-0 h-0 border-x-8 border-x-transparent border-t-8 border-t-emerald-400 transform -translate-x-1/2" />
             </div>
 

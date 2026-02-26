@@ -97,7 +97,7 @@ const Quiz = ({
 
   const title =
     currentChallenge?.type === "ASSIST"
-      ? "Select the correct meaning"
+      ? "Selecciona la opción corrrecta."
       : currentChallenge?.question;
 
   const onNext = () => {
@@ -128,13 +128,13 @@ const Quiz = ({
       return;
     }
 
-    const correctOption = options.find((option) => option.correct);
+    const correctption = options.find((option) => option.correct);
 
-    if (!correctOption) {
+    if (!correctption) {
       return;
     }
 
-    if (correctOption.id === selectedOption) {
+    if (correctption.id === selectedOption) {
       startTransition(() => {
         upsertChallengeProgress(currentChallenge.id)
           .then((response) => {
@@ -155,7 +155,7 @@ const Quiz = ({
               setHearts((prev) => Math.min(prev + 1, DEFAULT_HEARTS_MAX));
             }
           })
-          .catch(() => toast.error("Something went wrong. Please try again."));
+          .catch(() => toast.error("Algo salió mal. Inténtalo de nuevo."));
       });
     } else {
       startTransition(() => {
@@ -176,7 +176,7 @@ const Quiz = ({
               setHearts((prev) => Math.max(prev - 1, 0));
             }
           })
-          .catch(() => toast.error("Something went wrong. Please try again."));
+          .catch(() => toast.error("Algo salió mal. Inténtalo de nuevo."));
       });
     }
   };
@@ -212,7 +212,7 @@ const Quiz = ({
           />
 
           <h1 className="text-xl lg:text-3xl font-bold text-neutral-700">
-            Great job! <br /> You&apos;ve completed the lesson.
+            ¡Buen trabajo! <br /> Has completado la lección.
           </h1>
 
           <div className="flex items-center gap-x-4 w-full">

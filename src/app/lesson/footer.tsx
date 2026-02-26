@@ -28,14 +28,14 @@ const Footer = ({ onCheck, status, disabled, lessonId }: FooterProps) => {
         {status === "correct" && (
           <div className="flex items-center text-green-500 font-bold text-base lg:text-2xl">
             <CheckCircle className="h-6 w-6 lg:h-10 lg:w-10 mr-4" />
-            Nicely done!
+            ¡Bien hecho!
           </div>
         )}
 
         {status === "wrong" && (
           <div className="flex items-center text-rose-500 font-bold text-base lg:text-2xl">
             <XCircle className="h-6 w-6 lg:h-10 lg:w-10 mr-4" />
-            Try again.
+            Inténtalo de nuevo.
           </div>
         )}
 
@@ -44,7 +44,7 @@ const Footer = ({ onCheck, status, disabled, lessonId }: FooterProps) => {
             size={isMobile ? "sm" : "lg"}
             onClick={() => (window.location.href = `/lesson/${lessonId}`)}
           >
-            Practice again
+            Practica de nuevo.
           </Button>
         )}
 
@@ -55,10 +55,10 @@ const Footer = ({ onCheck, status, disabled, lessonId }: FooterProps) => {
           size={isMobile ? "sm" : "lg"}
           variant={status === "wrong" ? "danger" : "secondary"}
         >
-          {status === "none" && "Check"}
-          {status === "correct" && "Next"}
-          {status === "wrong" && "Retry"}
-          {status === "completed" && "Continue"}
+          {status === "none" && "Verificar"}
+          {status === "correct" && "Siguiente"}
+          {status === "wrong" && "Reintentar"}
+          {status === "completed" && "Continuar"}
         </Button>
       </div>
     </footer>

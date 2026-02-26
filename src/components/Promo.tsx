@@ -13,11 +13,11 @@ const Promo = ({ isMobile, className }: PromoProps) => (
     <div className="space-y-2">
       <div className="flex items-center justify-center gap-x-2">
         <Image src="/unlimited.svg" alt="Pro" height={26} width={26} />
-        <h3 className="font-bold text-lg bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Upgrade to Pro</h3>
+        <h3 className="font-bold text-lg bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Actualizar a Pro</h3>
       </div>
 
       <p className="text-neutral-600 text-center text-sm">
-        Get unlimited hearts and more!
+        ¡Consigue corazones ilimitados y mucho más!
       </p>
     </div>
 

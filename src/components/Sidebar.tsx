@@ -25,7 +25,7 @@ const Sidebar = async ({ className }: SidebarProps) => {
 
       <div className="flex flex-1 flex-col gap-y-2">
         <SidebarItem 
-          label="learn" 
+          label="Aprender" 
           href="/learn" 
           iconSrc="/learn.svg" 
           hasActiveCourse={!!userProgress?.activeCourseId}
@@ -33,27 +33,27 @@ const Sidebar = async ({ className }: SidebarProps) => {
 
         <SidebarItem
           href="/pronunciation"
-          label="pronunciation"
+          label="pronunciación"
           iconSrc="/quests.svg"
           hasActiveCourse={!!userProgress?.activeCourseId}
         />
 
         <SidebarItem
           href="/leaderboard"
-          label="leaderboard"
+          label="clasificación"
           iconSrc="/leaderboard.svg"
           hasActiveCourse={!!userProgress?.activeCourseId}
         />
 
         <SidebarItem 
           href="/quests" 
-          label="quests" 
+          label="Misiones" 
           iconSrc="/quests.svg"
           hasActiveCourse={!!userProgress?.activeCourseId}
         />
         <SidebarItem 
           href="/shop" 
-          label="shop" 
+          label="Tienda" 
           iconSrc="/shop.svg"
           hasActiveCourse={!!userProgress?.activeCourseId}
         />

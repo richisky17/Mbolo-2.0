@@ -318,31 +318,31 @@ export const AdminDashboard = () => {
             gap: "12px",
           }}
         >
-          <div style={{ display: "flex", alignItems: "start", gap: "12px" }}>
+          <div style={{ display: "flex", alignItems: "empezar", gap: "12px" }}>
             <span style={{ fontSize: "1.25rem" }}>1️⃣</span>
             <p style={{ margin: 0 }}>
               <strong>Crea curso</strong> - Elige tu idioma y configura los fundamentos 
             </p>
           </div>
-          <div style={{ display: "flex", alignItems: "start", gap: "12px" }}>
+          <div style={{ display: "flex", alignItems: "empezar", gap: "12px" }}>
             <span style={{ fontSize: "1.25rem" }}>2️⃣</span>
             <p style={{ margin: 0 }}>
               <strong>Añadir unidades</strong> - Divide el contenido en módulos de aprendizaje breves y fáciles de asimilar 
             </p>
           </div>
-          <div style={{ display: "flex", alignItems: "start", gap: "12px" }}>
+          <div style={{ display: "flex", alignItems: "empezar", gap: "12px" }}>
             <span style={{ fontSize: "1.25rem" }}>3️⃣</span>
             <p style={{ margin: 0 }}>
               <strong>Lecciones de diseño</strong> - Crea contenido atractivo que les encantará a los estudiantes 
             </p>
           </div>
-          <div style={{ display: "flex", alignItems: "start", gap: "12px" }}>
+          <div style={{ display: "flex", alignItems: "empezar", gap: "12px" }}>
             <span style={{ fontSize: "1.25rem" }}>4️⃣</span>
             <p style={{ margin: 0 }}>
               <strong>Build Challenges</strong> - Test knowledge with fun exercises 🎯
             </p>
           </div>
-          <div style={{ display: "flex", alignItems: "start", gap: "12px" }}>
+          <div style={{ display: "flex", alignItems: "empezar", gap: "12px" }}>
             <span style={{ fontSize: "1.25rem" }}>5️⃣</span>
             <p style={{ margin: 0 }}>
               <strong>Add Options</strong> - Give students choices and paths to success 🎉

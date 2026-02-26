@@ -51,7 +51,7 @@ const UnitBanner = ({ title, description, access }: UnitBannerProps) => (
         })}
       >
         <NotebookText className="h-4 w-4 lg:mr-2" />
-        <span className="hidden lg:block">Continue</span>
+        <span className="hidden lg:block">Continuar</span>
       </Button>
     </Link>
   </div>

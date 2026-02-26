@@ -37,7 +37,7 @@ const UpgradeButton = ({ isMobile }: UpgradeButtonProps) => {
       disabled={pending}
       className="w-full"
     >
-      Upgrade Now
+      Actualizar ahora
     </Button>
   );
 };

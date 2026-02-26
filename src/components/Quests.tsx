@@ -12,11 +12,11 @@ type QuestsProps = {
 const Quests = ({ points }: QuestsProps) => (
   <div className="border-2 border-emerald-200 rounded-2xl space-y-4 p-5 bg-gradient-to-br from-white to-emerald-50/30 shadow-md hover:shadow-lg transition-all duration-300 hover:border-emerald-300 backdrop-blur-sm">
     <div className="flex items-center justify-between w-full">
-      <h3 className="font-bold text-lg bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Quests</h3>
+      <h3 className="font-bold text-lg bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Misiones</h3>
 
       <Link href="/quests">
         <Button size="sm" variant="primaryOutline" className="border-emerald-300 text-emerald-600 hover:bg-emerald-50 hover:scale-105 transition-transform">
-          View all
+          Ver todo
         </Button>
       </Link>
     </div>
