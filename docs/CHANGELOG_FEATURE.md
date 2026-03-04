@@ -161,7 +161,7 @@ await fetch("/api/changelog", {
 
 ### **Actions:**
 - 🟢 **Created** - Green (#16a34a)
-- 🔵 **Updated** - Blue (#0ea5e9)
+- 🔵 **Updated** - Blue ( ea5e9)
 - 🔴 **Deleted** - Red (#dc2626)
 
 ### **Resources:**

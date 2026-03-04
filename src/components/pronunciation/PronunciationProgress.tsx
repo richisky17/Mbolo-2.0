@@ -38,7 +38,7 @@ export default function PronunciationProgress({ courseId }: PronunciationProgres
       const data = await response.json();
       setProgressData(data);
     } catch (error) {
-      console.error("Error fetching progress:", error);
+      console.error("Error al obtener el progreso:", error);
     } finally {
       setLoading(false);
     }
@@ -66,7 +66,7 @@ export default function PronunciationProgress({ courseId }: PronunciationProgres
     ?.slice()
     .reverse()
     .map((item: any, index: number) => ({
-      name: `Practice ${index + 1}`,
+      name: `Practica ${index + 1}`,
       score: item.score,
       accuracy: item.accuracy,
       fluency: item.fluency,
@@ -76,22 +76,22 @@ export default function PronunciationProgress({ courseId }: PronunciationProgres
     <div className="bg-white rounded-2xl p-4 sm:p-6 border-2 border-emerald-200 shadow-lg space-y-4 sm:space-y-6 w-full">
       <div>
         <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">
-          Pronunciation Progress
+          Progreso en la pronunciación
         </h3>
         <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mt-4 min-h-[80px]">
           <StatCard 
             key="practices"
-            label="Total Practices" 
+            label="Total de prácticas" 
             value={progress.totalPractices} 
           />
           <StatCard 
             key="average"
-            label="Average Score" 
+            label="Puntuación media" 
             value={`${progress.averageScore}%`} 
           />
           <StatCard
             key="improvement"
-            label="Improvement"
+            label="Mejora"
             value={`${progress.improvementRate > 0 ? "+" : ""}${progress.improvementRate}%`}
             color={progress.improvementRate > 0 ? "text-emerald-600" : progress.improvementRate < 0 ? "text-rose-600" : "text-gray-600"}
           />
@@ -100,7 +100,7 @@ export default function PronunciationProgress({ courseId }: PronunciationProgres
 
       {chartData.length > 0 && (
         <div>
-          <h4 className="font-semibold text-gray-700 mb-4">Score Trend</h4>
+          <h4 className="font-semibold text-gray-700 mb-4">Tendencia de puntuación</h4>
           <ResponsiveContainer width="100%" height={250}>
             <LineChart data={chartData} margin={{ top: 5, right: 10, left: 0, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
@@ -127,7 +127,7 @@ export default function PronunciationProgress({ courseId }: PronunciationProgres
                 stroke="#10b981"
                 strokeWidth={3}
                 dot={{ fill: "#10b981", r: 4 }}
-                name="Overall Score"
+                name="Puntuación global"
               />
               <Line
                 type="monotone"
@@ -135,7 +135,7 @@ export default function PronunciationProgress({ courseId }: PronunciationProgres
                 stroke="#06b6d4"
                 strokeWidth={2}
                 dot={{ fill: "#06b6d4", r: 3 }}
-                name="Accuracy"
+                name="Precisión"
               />
               <Line
                 type="monotone"
@@ -143,7 +143,7 @@ export default function PronunciationProgress({ courseId }: PronunciationProgres
                 stroke="#8b5cf6"
                 strokeWidth={2}
                 dot={{ fill: "#8b5cf6", r: 3 }}
-                name="Fluency"
+                name="Fluidez"
               />
             </LineChart>
           </ResponsiveContainer>
@@ -152,7 +152,7 @@ export default function PronunciationProgress({ courseId }: PronunciationProgres
 
       {chartData.length === 0 && (
         <div className="text-center py-12 text-gray-500">
-          <p>No practice data yet. Start practicing to see your progress!</p>
+          <p>Aún no hay datos de práctica. ¡Empieza a practicar para ver tu progreso!</p>
         </div>
       )}
     </div>

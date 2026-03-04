@@ -31,14 +31,14 @@ export const List = ({ courses, activeCourseId }: ListProps) => {
     startTransition(() => {
       upsertUserProgress(id)
         .then(() => {
-          toast.success("Course changed!");
+          toast.success("¡Cambio de rumbo!");
           router.push("/learn");
         })
         .catch((error) => {
           if (error.message === "COURSE_EMPTY") {
-            toast.error("This course doesn't have any lessons yet. Coming soon!");
+            toast.error("Este curso aún no tiene ninguna lección. ¡Próximamente!");
           } else {
-            toast.error("Something went wrong. Please try again.");
+            toast.error("Ha ocurrido un error. Inténtalo de nuevo.");
           }
         });
     });

@@ -133,10 +133,10 @@ export default function PronunciationPractice({
 
       mediaRecorder.start();
       setIsRecording(true);
-      toast.success("Recording started");
+      toast.success("Inicio de la grabación");
     } catch (error) {
-      console.error("Error starting recording:", error);
-      toast.error("Failed to access microphone");
+      console.error("Error al iniciar la grabación:", error);
+      toast.error("No se pudo acceder al micrófono.");
     }
   };
 
@@ -144,7 +144,7 @@ export default function PronunciationPractice({
     if (mediaRecorderRef.current && isRecording) {
       mediaRecorderRef.current.stop();
       setIsRecording(false);
-      toast.success("Recording stopped");
+      toast.success("Grabación detenida");
     }
   };
 
@@ -163,7 +163,7 @@ export default function PronunciationPractice({
       });
 
       if (!response.ok) {
-        throw new Error("Failed to analyze pronunciation");
+        throw new Error("No se pudo analizar la pronunciación.");
       }
 
       const data = await response.json();
@@ -193,13 +193,13 @@ export default function PronunciationPractice({
         onComplete(data.score);
       }
 
-      toast.success(`Pronunciation score: ${data.score}%`);
+      toast.success(`Puntuación de pronunciación: ${data.score}%`);
       
       // Trigger progress refresh in parent component
       window.dispatchEvent(new CustomEvent('pronunciation-practice-completed'));
     } catch (error) {
-      console.error("Error analyzing pronunciation:", error);
-      toast.error("Failed to analyze pronunciation");
+      console.error("Error al analizar la pronunciación:", error);
+      toast.error("No se ha podido analizar la pronunciación.");
     } finally {
       setIsProcessing(false);
     }
@@ -233,7 +233,7 @@ export default function PronunciationPractice({
       <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-4 sm:p-6 border-2 border-emerald-200">
         <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-emerald-700 mb-2">Practice saying:</p>
+            <p className="text-sm font-semibold text-emerald-700 mb-2">Practique diciendo:</p>
             <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 break-words">{targetText}</p>
           </div>
           
@@ -247,7 +247,7 @@ export default function PronunciationPractice({
                 className="border-emerald-300 text-emerald-600 w-full sm:w-[140px] sm:min-w-[140px]"
               >
                 <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                Loading...
+                Cargando...
               </Button>
             ) : correctPronunciationUrl ? (
               isPlayingCorrectAudio ? (
@@ -257,7 +257,7 @@ export default function PronunciationPractice({
                   className="border-emerald-300 text-emerald-600 hover:bg-emerald-50 w-full sm:w-[140px] sm:min-w-[140px]"
                 >
                   <Pause className="h-4 w-4 mr-2" />
-                  Pause
+                  Pausa
                 </Button>
               ) : (
                 <Button
@@ -266,8 +266,8 @@ export default function PronunciationPractice({
                   className="border-emerald-300 text-emerald-600 hover:bg-emerald-50 w-full sm:w-[140px] sm:min-w-[140px]"
                 >
                   <Volume2 className="h-4 w-4 mr-2" />
-                  <span className="sm:hidden">Listen to Correct</span>
-                  <span className="hidden sm:inline">Listen</span>
+                  <span className="sm:hidden">Escuchar correctamente</span>
+                  <span className="hidden sm:inline">Escucha</span>
                 </Button>
               )
             ) : (
@@ -277,11 +277,11 @@ export default function PronunciationPractice({
                 className="border-emerald-300 text-emerald-600 hover:bg-emerald-50 w-full sm:w-[140px] sm:min-w-[140px]"
               >
                 <Volume2 className="h-4 w-4 mr-2" />
-                <span className="sm:hidden">Generate Audio</span>
-                <span className="hidden sm:inline">Generate</span>
+                <span className="sm:hidden">Generar Audio</span>
+                <span className="hidden sm:inline">Generar</span>
               </Button>
             )}
-            <p className="text-xs text-gray-500 text-center hidden sm:block">Correct<br />Pronunciation</p>
+            <p className="text-xs text-gray-500 text-center hidden sm:block">Correcto<br />Pronunciacion</p>
           </div>
         </div>
       </div>
@@ -325,7 +325,7 @@ export default function PronunciationPractice({
               className="border-emerald-300 text-emerald-600"
             >
               <Pause className="h-5 w-5 mr-2" />
-              Pause
+              Pausa
             </Button>
             <Button
               onClick={analyzeAudio}
@@ -336,7 +336,7 @@ export default function PronunciationPractice({
             </Button>
             <Button onClick={reset} variant="secondaryOutline">
               <RotateCcw className="h-5 w-5 mr-2" />
-              Record Again
+              Grabar de nuevo
             </Button>
           </div>
         )}
@@ -344,7 +344,7 @@ export default function PronunciationPractice({
         {isRecording && (
           <div className="flex items-center gap-2 text-rose-500 animate-pulse">
             <div className="w-3 h-3 bg-rose-500 rounded-full"></div>
-            <span className="font-semibold">Recording...</span>
+            <span className="font-semibold">Grabando...</span>
           </div>
         )}
       </div>
@@ -365,7 +365,7 @@ function PronunciationFeedback({ result }: { result: any }) {
         <div className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white w-24 h-24 text-3xl font-bold shadow-lg">
           {result.score}%
         </div>
-        <p className="text-lg font-semibold text-gray-700 mt-4">Overall Score</p>
+        <p className="text-lg font-semibold text-gray-700 mt-4">Puntuación global</p>
       </div>
 
       {/* Detailed Scores */}
@@ -379,7 +379,7 @@ function PronunciationFeedback({ result }: { result: any }) {
       {/* Errors */}
       {result.errors && result.errors.length > 0 && (
         <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-4">
-          <p className="font-semibold text-amber-800 mb-2">Areas to Improve:</p>
+          <p className="font-semibold text-amber-800 mb-2">Áreas a mejorar:</p>
           <ul className="list-disc list-inside space-y-1 text-amber-700">
             {result.errors.map((error: string, i: number) => (
               <li key={i}>{error}</li>
@@ -391,7 +391,7 @@ function PronunciationFeedback({ result }: { result: any }) {
       {/* Phoneme Breakdown */}
       {result.phonemeDetails && result.phonemeDetails.length > 0 && (
         <div>
-          <p className="font-semibold text-gray-700 mb-3">Phoneme Breakdown:</p>
+          <p className="font-semibold text-gray-700 mb-3">Desglose de fonemas:</p>
           <div className="space-y-2">
             {result.phonemeDetails.slice(0, 5).map((phoneme: any, i: number) => (
               <div key={i} className="flex items-center gap-4">

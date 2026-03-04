@@ -72,9 +72,13 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-x-3">
               <LottieMascot width={40} height={40} />
-              <h3 className="text-2xl font-extrabold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                Mbolo
-              </h3>
+              <h3 className="text-2xl font-extrabold">
+  <span className="text-emerald-600">M</span>
+  <span className="text-white" style={{ textShadow: "0 0 4px rgba(0,0,0,0.5)" }}>b</span>
+  <span className="text-red-600">ô</span>
+  <span className="text-blue-600">l</span>
+  <span className="text-red-600">o</span>
+</h3>
             </div>
             <p className="text-gray-600 text-sm">
               {t("footer.tagline")}

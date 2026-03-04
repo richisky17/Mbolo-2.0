@@ -26,8 +26,17 @@ const Header = () => {
             <LottieMascot width={48} height={48} />
           </div>
 
-          <h1 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent truncate">
-            Mbolo
+          <h1 className="text-2xl sm:text-3xl font-extrabold truncate">
+            <span className="text-emerald-600">M</span>
+            <span
+              className="text-white"
+              style={{ textShadow: "0 0 4px rgba(0,0,0,0.5)" }}
+            >
+              b
+            </span>
+            <span className="text-red-600">ô</span>
+            <span className="text-blue-600">l</span>
+            <span className="text-red-600">o</span>
           </h1>
         </Link>
 

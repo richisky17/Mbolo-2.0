@@ -27,7 +27,7 @@ async function getPronunciationTexts(courseId: number | null) {
       return data.map((item) => item.text);
     }
   } catch (error) {
-    console.error("Error fetching pronunciation texts:", error);
+    console.error("Error al obtener los textos de pronunciación:", error);
   }
   return []; // Return empty array instead of fallback texts
 }
@@ -49,22 +49,22 @@ export default async function PronunciationPage() {
           <div className="my-8 space-y-8">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">
-                Pronunciation Coach
+                Entrenador de pronunciación
               </h1>
               <p className="text-gray-600 text-lg">
-                Practice your pronunciation with AI-powered feedback
+                Practica tu pronunciación con comentarios basados en inteligencia artificial.
               </p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 border-2 border-emerald-200 shadow-lg text-center">
               <div className="max-w-md mx-auto space-y-4">
                 <div className="text-6xl mb-4">📝</div>
-                <h2 className="text-2xl font-bold text-gray-800">No Practice Texts Available</h2>
+                <h2 className="text-2xl font-bold text-gray-800">No hay textos de práctica disponibles.</h2>
                 <p className="text-gray-600">
-                  Pronunciation practice texts haven&apos;t been created yet. Please ask your administrator to add practice texts in the admin panel.
+                  Los textos para practicar la pronunciación aún no se han creado. Pida al administrador que añada textos de práctica en el panel de administración.
                 </p>
                 <p className="text-sm text-gray-500 mt-4">
-                  Admins can generate texts using AI or create them manually.
+                  Los administradores pueden generar textos utilizando IA o crearlos manualmente.
                 </p>
               </div>
             </div>
@@ -90,16 +90,16 @@ export default async function PronunciationPage() {
         <div className="my-8 space-y-8">
           <div>
             <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">
-              Pronunciation Coach
+              Entrenador de pronunciación
             </h1>
             <p className="text-gray-600 text-lg">
-              Practice your pronunciation with AI-powered feedback
+              Practica tu pronunciación con comentarios basados en inteligencia artificial.
             </p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 border-2 border-emerald-200 shadow-lg">
             <h2 className="text-xl font-bold text-gray-800 mb-4">
-              Practice Phrases
+              Frases para practicar
             </h2>
             <div className="space-y-4">
               {practiceTexts.map((text, index) => (

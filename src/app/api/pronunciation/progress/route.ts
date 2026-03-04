@@ -79,9 +79,9 @@ export async function GET(req: NextRequest) {
       recentScores: scores,
     });
   } catch (error) {
-    console.error("Error fetching pronunciation progress:", error);
+    console.error("Error al obtener el progreso de la pronunciación:", error);
     return NextResponse.json(
-      { error: "Failed to fetch progress" },
+      { error: "No se pudo obtener el progreso" },
       { status: 500 }
     );
   }
