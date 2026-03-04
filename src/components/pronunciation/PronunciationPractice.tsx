@@ -281,7 +281,7 @@ export default function PronunciationPractice({
                 <span className="hidden sm:inline">Generar</span>
               </Button>
             )}
-            <p className="text-xs text-gray-500 text-center hidden sm:block">Correcto<br />Pronunciacion</p>
+            <p className="text-xs text-gray-500 text-center hidden sm:block">Correcta<br />Pronunciacion</p>
           </div>
         </div>
       </div>
