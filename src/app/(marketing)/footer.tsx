@@ -35,36 +35,39 @@ const Footer = () => {
   }, []);
 
   const getSocialIcon = (platform: string) => {
+    // Ajustamos colores para modo oscuro: íconos gris claro que al hover se vuelven verde claro
     switch (platform.toLowerCase()) {
       case "facebook":
-        return <Facebook className="w-5 h-5 text-gray-600 group-hover:text-emerald-600" />;
+        return <Facebook className="w-5 h-5 text-gray-400 group-hover:text-emerald-400" />;
       case "twitter":
-        return <Twitter className="w-5 h-5 text-gray-600 group-hover:text-emerald-600" />;
+        return <Twitter className="w-5 h-5 text-gray-400 group-hover:text-emerald-400" />;
       case "instagram":
-        return <Instagram className="w-5 h-5 text-gray-600 group-hover:text-emerald-600" />;
+        return <Instagram className="w-5 h-5 text-gray-400 group-hover:text-emerald-400" />;
       case "youtube":
-        return <Youtube className="w-5 h-5 text-gray-600 group-hover:text-emerald-600" />;
+        return <Youtube className="w-5 h-5 text-gray-400 group-hover:text-emerald-400" />;
       case "linkedin":
-        return <Linkedin className="w-5 h-5 text-gray-600 group-hover:text-emerald-600" />;
+        return <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-emerald-400" />;
       case "discord":
-        return <MessageCircle className="w-5 h-5 text-gray-600 group-hover:text-emerald-600" />;
+        return <MessageCircle className="w-5 h-5 text-gray-400 group-hover:text-emerald-400" />;
       case "tiktok":
-        return <MessageCircle className="w-5 h-5 text-gray-600 group-hover:text-emerald-600" />;
+        return <MessageCircle className="w-5 h-5 text-gray-400 group-hover:text-emerald-400" />;
       default:
-        return <Globe className="w-5 h-5 text-gray-600 group-hover:text-emerald-600" />;
+        return <Globe className="w-5 h-5 text-gray-400 group-hover:text-emerald-400" />;
     }
   };
   
+  // Nota: las banderas en languages son las mismas, asumo que funcionan en modo oscuro.
   const languages = [
     { name: t("footer.languages.spanish"), flag: "/FANG.png", popular: true },
     { name: t("footer.languages.french"), flag: "/BUBI.png", popular: true },
     { name: t("footer.languages.japanese"), flag: "/NDOWE.png", popular: false },
     { name: t("footer.languages.italian"), flag: "/BISIO.png", popular: false },
     { name: t("footer.languages.croatian"), flag: "/ANNOBON.png", popular: false },
+    { name: t("footer.languages.benga"), flag: "/ANNOBON.png", popular: false },
   ];
 
   return (
-    <footer className="w-full bg-gradient-to-b from-white to-gray-50 border-t border-gray-200">
+    <footer className="w-full bg-black border-t border-gray-800">
       {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -73,14 +76,14 @@ const Footer = () => {
             <div className="flex items-center gap-x-3">
               <LottieMascot width={40} height={40} />
               <h3 className="text-2xl font-extrabold">
-  <span className="text-emerald-600">M</span>
-  <span className="text-white" style={{ textShadow: "0 0 4px rgba(0,0,0,0.5)" }}>b</span>
-  <span className="text-red-600">ô</span>
-  <span className="text-blue-600">l</span>
-  <span className="text-red-600">o</span>
-</h3>
+                <span className="text-emerald-500">M</span>
+                <span className="text-white">b</span>
+                <span className="text-red-500">ô</span>
+                <span className="text-blue-500">l</span>
+                <span className="text-red-500">o</span>
+              </h3>
             </div>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-400 text-sm">
               {t("footer.tagline")}
             </p>
             <div className="flex gap-3">
@@ -91,7 +94,7 @@ const Footer = () => {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-gray-100 hover:bg-emerald-100 flex items-center justify-center transition-colors group"
+                    className="w-10 h-10 rounded-full bg-gray-800 hover:bg-emerald-900/50 flex items-center justify-center transition-colors group"
                     aria-label={`Visit our ${link.platform} page`}
                   >
                     {getSocialIcon(link.platform)}
@@ -103,94 +106,70 @@ const Footer = () => {
 
           {/* Product Links */}
           <div>
-            <h4 className="font-bold text-gray-900 mb-4">{t("footer.product")}</h4>
+            <h4 className="font-bold text-gray-200 mb-4">{t("footer.product")}</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/courses" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
+                <Link href="/courses" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
                   {t("footer.product.courses")}
                 </Link>
               </li>
               <li>
-                <Link href="/learn" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
+                <Link href="/learn" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
                   {t("footer.product.learn")}
                 </Link>
               </li>
               <li>
-                <Link href="/leaderboard" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
+                <Link href="/leaderboard" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
                   {t("footer.product.leaderboard")}
                 </Link>
               </li>
-              <li>
-                <Link href="/shop" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
-                  {t("footer.product.shop")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/quests" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
-                  {t("footer.product.quests")}
-                </Link>
-              </li>
+            
+             
             </ul>
           </div>
 
           {/* Company Links */}
           <div>
-            <h4 className="font-bold text-gray-900 mb-4">{t("footer.company")}</h4>
+            <h4 className="font-bold text-gray-200 mb-4">{t("footer.company")}</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/about-us" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
+                <Link href="/about-us" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
                   {t("footer.company.about")}
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
+                <Link href="/careers" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
                   {t("footer.company.careers")}
                 </Link>
               </li>
               <li>
-                <Link href="/press" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
+                <Link href="/press" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
                   {t("footer.company.press")}
                 </Link>
               </li>
-              <li>
-                <Link href="/blog" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
-                  {t("footer.company.blog")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
-                  {t("footer.company.contact")}
-                </Link>
-              </li>
+            
+            
             </ul>
           </div>
 
           {/* Support Links */}
           <div>
-            <h4 className="font-bold text-gray-900 mb-4">{t("footer.support")}</h4>
+            <h4 className="font-bold text-gray-200 mb-4">{t("footer.support")}</h4>
             <ul className="space-y-3">
+            
+            
               <li>
-                <Link href="/help-center" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
-                  {t("footer.support.help")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/guidelines" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
-                  {t("footer.support.guidelines")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
+                <Link href="/privacy-policy" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
                   {t("footer.support.privacy")}
                 </Link>
               </li>
               <li>
-                <Link href="/terms-of-service" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
+                <Link href="/terms-of-service" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
                   {t("footer.support.terms")}
                 </Link>
               </li>
               <li>
-                <Link href="/cookie-policy" className="text-gray-600 hover:text-emerald-600 text-sm transition-colors">
+                <Link href="/cookie-policy" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
                   {t("footer.support.cookies")}
                 </Link>
               </li>
@@ -199,16 +178,16 @@ const Footer = () => {
         </div>
 
         {/* Popular Languages Section */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
+        <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex items-center gap-2 mb-4">
-            <Globe className="w-5 h-5 text-emerald-600" />
-            <h4 className="font-bold text-gray-900">{t("footer.languages.title")}</h4>
+            <Globe className="w-5 h-5 text-emerald-400" />
+            <h4 className="font-bold text-gray-200">{t("footer.languages.title")}</h4>
           </div>
           <div className="flex flex-wrap gap-3">
             {languages.map((lang) => (
               <button
                 key={lang.name}
-                className="group flex items-center gap-2 px-4 py-2 bg-white hover:bg-emerald-50 border border-gray-200 hover:border-emerald-300 rounded-full transition-all"
+                className="group flex items-center gap-2 px-4 py-2 bg-gray-900 hover:bg-gray-800 border border-gray-700 hover:border-emerald-700 rounded-full transition-all"
               >
                 <Image
                   src={lang.flag}
@@ -217,11 +196,11 @@ const Footer = () => {
                   width={20}
                   className="rounded-sm"
                 />
-                <span className="text-sm font-medium text-gray-700 group-hover:text-emerald-700">
+                <span className="text-sm font-medium text-gray-300 group-hover:text-emerald-400">
                   {lang.name}
                 </span>
                 {lang.popular && (
-                  <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">
+                  <span className="text-xs bg-emerald-900/50 text-emerald-300 px-2 py-0.5 rounded-full">
                     {t("footer.languages.popular")}
                   </span>
                 )}
@@ -232,20 +211,20 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-200 bg-gray-50">
+      <div className="border-t border-gray-800 bg-gray-950">
         <div className="mx-auto max-w-7xl px-6 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-600">
-              © {new Date().getFullYear()} Mbolo. {t("footer.rights")}
+            <p className="text-sm text-gray-400">
+              © {new Date().getFullYear()} Mbôlo. {t("footer.rights")}
             </p>
             <div className="flex flex-wrap gap-6">
-              <Link href="/privacy-policy" className="text-sm text-gray-600 hover:text-emerald-600 transition-colors">
+              <Link href="/privacy-policy" className="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                 {t("footer.support.privacy")}
               </Link>
-              <Link href="/terms-of-service" className="text-sm text-gray-600 hover:text-emerald-600 transition-colors">
+              <Link href="/terms-of-service" className="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                 {t("footer.support.terms")}
               </Link>
-              <Link href="/cookie-policy" className="text-sm text-gray-600 hover:text-emerald-600 transition-colors">
+              <Link href="/cookie-policy" className="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                 {t("footer.support.cookies")}
               </Link>
             </div>

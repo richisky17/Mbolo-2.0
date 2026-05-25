@@ -19,7 +19,7 @@ const Header = () => {
   const { t } = useLanguage();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-emerald-100 bg-white/80 backdrop-blur-lg px-4 sm:px-6 shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-black/80 backdrop-blur-lg px-4 sm:px-6 shadow-sm">
       <div className="mx-auto flex h-16 sm:h-20 items-center justify-between lg:max-w-7xl">
         <Link href="/" className="flex items-center gap-x-2 sm:gap-x-3 group cursor-pointer flex-shrink-0 min-w-0">
           <div className="transition-transform group-hover:scale-110 flex-shrink-0 w-9 h-9 sm:w-12 sm:h-12">
@@ -27,28 +27,21 @@ const Header = () => {
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold truncate">
-            <span className="text-emerald-600">M</span>
-            <span
-              className="text-white"
-              style={{ textShadow: "0 0 4px rgba(0,0,0,0.5)" }}
-            >
-              b
-            </span>
-            <span className="text-red-600">ô</span>
-            <span className="text-blue-600">l</span>
-            <span className="text-red-600">o</span>
+            <span className="text-emerald-400">M</span>
+            <span className="text-white">b</span>
+            <span className="text-red-400">ô</span>
+            <span className="text-blue-400">l</span>
+            <span className="text-red-400">o</span>
           </h1>
         </Link>
 
         {/* Navigation Links - Desktop */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/features" className="text-gray-600 hover:text-emerald-600 font-medium transition-colors">
-            {t("header.features")}
-          </Link>
-          <Link href="/about-us" className="text-gray-600 hover:text-emerald-600 font-medium transition-colors">
+       
+          <Link href="/about-us" className="text-gray-300 hover:text-emerald-400 font-medium transition-colors">
             {t("header.about")}
           </Link>
-          <Link href="/contact" className="text-gray-600 hover:text-emerald-600 font-medium transition-colors">
+          <Link href="/contact" className="text-gray-300 hover:text-emerald-400 font-medium transition-colors">
             {t("header.contact")}
           </Link>
         </nav>
@@ -62,7 +55,7 @@ const Header = () => {
               <Button
                 disabled
                 size="lg"
-                className="w-[100px] sm:w-[120px] h-9 sm:h-11 animate-pulse bg-gray-200"
+                className="w-[100px] sm:w-[120px] h-9 sm:h-11 animate-pulse bg-gray-700"
               />
             </SignedOut>
 
@@ -70,7 +63,7 @@ const Header = () => {
               <Button
                 disabled
                 size="rounded"
-                className="h-9 w-9 sm:h-10 sm:w-10 animate-pulse bg-gray-200"
+                className="h-9 w-9 sm:h-10 sm:w-10 animate-pulse bg-gray-700"
               />
             </SignedIn>
           </ClerkLoading>
@@ -102,7 +95,7 @@ const Header = () => {
               >
                 <Button 
                   size="lg"
-                  className="text-sm sm:text-base px-4 sm:px-6 h-9 sm:h-11 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-md hover:shadow-lg transition-all border-0 whitespace-nowrap"
+                  className="text-sm sm:text-base px-4 sm:px-6 h-9 sm:h-11 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-md hover:shadow-lg transition-all border-0 whitespace-nowrap"
                 >
                   {t("header.login")}
                 </Button>

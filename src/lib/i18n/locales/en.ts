@@ -27,13 +27,13 @@ export default {
   "features.gamified.description": "Earn points, unlock achievements, and compete with friends while learning.",
   "features.community.title": "Join Community",
   "features.community.description": "Connect with millions of learners and native speakers worldwide.",
-  "features.languages.title": "5 vernacular languages",
-  "features.languages.description": "Choose from Fang, Bubi, Ndowe, Bisio, and Fadambo.",
-  "features.results.title": "Proven Results",
-  "features.results.description": "See real progress with our scientifically-backed teaching methods.",
+ // "features.languages.title": "5 vernacular languages",
+ // "features.languages.description": "Choose from Fang, Bubi, Ndowe, Bisio, and Fadambo.",
+ // "features.results.title": "Proven Results",
+ // "features.results.description": "See real progress with our scientifically-backed teaching methods.",
   
   // Mobile Apps Section
-  "mobile.badge": "COMING SOON",
+  //"mobile.badge": "COMING SOON",
   "mobile.title": "Learn On The Go",
   "mobile.subtitle": "Mobile Apps",
   "mobile.description": "Take your language learning anywhere with our upcoming iOS and Android apps. Practice during your commute, lunch break, or anytime, anywhere.",

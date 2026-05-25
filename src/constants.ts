@@ -4,25 +4,22 @@ export const DEFAULT_POINTS_START = 0;
 export const POINTS_PER_CHALLENGE = 10;
 
 export const quests = [
-  {
-    title: "Gana 20 XP",
-    value: 20,
-  },
-  {
-    title: "Gana 50 XP",
-    value: 50,
-  },
-  {
-    title: "Gana 100 XP",
-    value: 100,
-  },
-  {
-    title: "Gana 500 XP",
-    value: 500,
-  },
+ 
   {
     title: "Gana 1000 XP",
     value: 1000,
+  },
+  {
+    title: "Gana 3000 XP",
+    value: 3000,
+  },
+  {
+    title: "Gana 5000 XP",
+    value: 5000,
+  },
+  {
+    title: "Gana 10.000 XP",
+    value: 10000,
   },
 ];
 
@@ -41,6 +38,11 @@ export const sidebarItems = [
     href: "/leaderboard",
     label: "Clasificación",
     iconSrc: "/leaderboard.svg",
+  },
+    {
+    href: "/Juegos",
+    label: "Juegos",
+    iconSrc: "/games.svg",
   },
   {
     href: "/quests",

@@ -5,6 +5,10 @@ import { SidebarItem } from "@/components";
 import Logo from "@/components/Logo";
 import { ClerkLoading, ClerkLoaded, UserButton, SignedIn } from "@clerk/nextjs";
 import { getUserProgress } from "@/server/db/queries";
+import { GamesButton } from "@/components/GamesButton"; // ruta directa
+
+
+
 
 type SidebarProps = {
   className?: string;
@@ -50,6 +54,9 @@ const Sidebar = async ({ className }: SidebarProps) => {
           label="Misiones" 
           iconSrc="/quests.svg"
           hasActiveCourse={!!userProgress?.activeCourseId}
+        />
+            <GamesButton 
+        
         />
         <SidebarItem 
           href="/shop" 
