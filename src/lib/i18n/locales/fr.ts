@@ -85,6 +85,7 @@ export default {
   "footer.languages.japanese": "Ndowe",
   "footer.languages.italian": "Bisio",
   "footer.languages.croatian": "Fadambo",
+   "footer.languages.benga": "benga",
   "footer.languages.popular": "Populaire",
   "footer.rights": "Tous droits réservés.",
 } as const;
