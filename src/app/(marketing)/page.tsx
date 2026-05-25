@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Apple, Smartphone } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui";
 import LottieMascot from "@/components/LottieMascot";
@@ -99,22 +100,42 @@ export default function HomePage() {
               </ClerkLoaded>
             </div>
 
-            {/* Testimonios */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-12 h-12 rounded-full border-2 border-gray-800 bg-gray-700 flex items-center justify-center text-white text-sm font-bold shadow-md"
-                  >
-                    <span className="text-xs">👤</span>
-                  </div>
-                ))}
-              </div>
-              <div className="text-gray-300 text-sm max-w-xs">
-                  Únete a miles de personas que están aprendiendo sus lenguas.
-              </div>
-            </div>
+          {/* Testimonios con imágenes reales */}
+<div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
+  <div className="flex -space-x-2">
+    <Image
+      src="/Jov1.png"
+      alt="Estudiante 1"
+      width={48}
+      height={48}
+      className="w-12 h-12 rounded-full border-2 border-gray-800 object-cover shadow-md"
+    />
+    <Image
+      src="/Jov2.png"
+      alt="Estudiante 2"
+      width={48}
+      height={48}
+      className="w-12 h-12 rounded-full border-2 border-gray-800 object-cover shadow-md"
+    />
+    <Image
+      src="/Jov3.png"
+      alt="Estudiante 3"
+      width={48}
+      height={48}
+      className="w-12 h-12 rounded-full border-2 border-gray-800 object-cover shadow-md"
+    />
+    <Image
+      src="/Jov4.png"
+      alt="Estudiante 4"
+      width={48}
+      height={48}
+      className="w-12 h-12 rounded-full border-2 border-gray-800 object-cover shadow-md"
+    />
+  </div>
+  <div className="text-gray-300 text-sm max-w-xs">
+    Únete a miles de personas que están aprendiendo sus lenguas.
+  </div>
+</div>
           </div>
 
           <div className="relative flex items-center justify-center flex-1 z-10">
@@ -169,10 +190,111 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mobile Apps Section (sin cambios relevantes, solo se ajusta espaciado) */}
-      <section className="py-12 md:py-20 px-6 bg-black relative overflow-hidden">
-        {/* ... contenido de la sección móvil (lo he dejado igual que en tu código, pero por brevedad no lo repito aquí; mantenlo tal cual está en tu versión) */}
-        {/* NOTA: Para ahorrar espacio, no copio la sección móvil completa, pero tú ya la tienes. */}
+            {/* Mobile Apps Section - Aprende Sobre la Marcha */}
+      <section className="py-20 px-6 bg-black relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-r from-emerald-600/5 to-teal-600/5 rounded-full blur-3xl" />
+
+        <div className="mx-auto max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Columna izquierda - Contenido textual y formulario */}
+            <div className="space-y-8">
+
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                {t("mobile.title") || "Aprende Sobre la Marcha"}{" "}
+                <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                  {t("mobile.subtitle") || "Aplicaciones Móviles"}
+                </span>
+              </h2>
+
+              <p className="text-lg text-gray-300 max-w-lg">
+                {t("mobile.description") || "Lleva tu aprendizaje de idiomas a cualquier lugar con nuestras próximas aplicaciones para iOS y Android. Practica durante tu viaje, hora de almuerzo o en cualquier momento."}
+              </p>
+
+              {/* Características en grid */}
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Download className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white">{t("mobile.feature.offline") || "Modo Sin Conexión"}</h4>
+                    <p className="text-sm text-gray-400">{t("mobile.feature.offline.desc") || "Descarga lecciones y aprende sin internet"}</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Bell className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white">{t("mobile.feature.notifications") || "Notificaciones Push"}</h4>
+                    <p className="text-sm text-gray-400">{t("mobile.feature.notifications.desc") || "Recordatorios diarios para mantener tu racha"}</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Download className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white">{t("mobile.feature.sync") || "Sincronización entre Dispositivos"}</h4>
+                    <p className="text-sm text-gray-400">{t("mobile.feature.sync.desc") || "Continúa sin problemas donde lo dejaste"}</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Globe className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white">{t("mobile.feature.voice") || "Reconocimiento de Voz"}</h4>
+                    <p className="text-sm text-gray-400">{t("mobile.feature.voice.desc") || "Practica pronunciación con retroalimentación IA"}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Botones de tiendas */}
+<div className="flex flex-wrap gap-4">
+  {/* App Store */}
+  <div className="bg-gray-900 rounded-xl p-3 flex items-center gap-3 border border-gray-800 hover:border-emerald-500 transition-colors cursor-pointer">
+    <Apple className="w-8 h-8 text-white" />
+    <div>
+      <p className="text-xs text-gray-400">{t("mobile.app.getin") || "Descárgalo en"}</p>
+      <p className="text-sm font-semibold text-white">{t("mobile.app.apple") || "App Store"}</p>
+    </div>
+  </div>
+  
+  {/* Google Play */}
+  <div className="bg-gray-900 rounded-xl p-3 flex items-center gap-3 border border-gray-800 hover:border-emerald-500 transition-colors cursor-pointer">
+    <Smartphone className="w-8 h-8 text-white" />
+    <div>
+      <p className="text-xs text-gray-400">{t("mobile.app.getin") || "Descárgalo en"}</p>
+      <p className="text-sm font-semibold text-white">{t("mobile.app.google") || "Google Play"}</p>
+    </div>
+  </div>
+</div>
+              
+            </div>
+
+            {/* Columna derecha - Imagen estática FON SIN FONDO.png */}
+                        {/* Columna derecha - Imagen escalada 250% como fondo */}
+            <div className="relative flex justify-center items-center overflow-visible">
+              <div className="relative w-full flex justify-center items-center">
+                {/* Efecto de glow detrás */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-emerald- 950 to-teal-950 rounded-full blur-2xl -z-10" />
+                
+                {/* Imagen escalada 250% con opacidad para que sea fondo */}
+                <div className="transform scale-[1.1] origin-center">
+  <Image
+    src="/FON SIN FONDO.png"
+    alt="Fondo decorativo"
+    width={400}
+    height={600}
+    className="w-auto h-auto max-w-none opacity-80 pointer-events-none"
+    priority
+  />
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Nueva Sección Identidad - 40% texto, 60% imagen, imagen escalada al 400% */}
@@ -201,8 +323,8 @@ export default function HomePage() {
       <div className="flex justify-end">
         <div className="relative w-full transform scale-200 origin-right transform-gpu">
           {/* Glow más grande para acompañar la escala */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-emerald-800 to-teal-800 rounded-full blur-3xl opacity-30" />
-          <div className="relative rounded-2xl overflow-hidden">
+          <div className="absolute -inset-2 bg-gradient-to-r from-emerald-950 to-teal-990 rounded-full blur-3xl opacity-30" />
+          <div className="relative rounded-1xl overflow-hidden">
             <Image
               src="/MAPA_CENTRADO.png"
               alt="Mapa de Guinea Ecuatorial con lenguas"
