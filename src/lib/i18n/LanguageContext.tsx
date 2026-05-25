@@ -41,7 +41,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = (key: TranslationKey): string => {
     const currentTranslations = translations[language as keyof typeof translations] || translations.en;
-    return currentTranslations[key] || translations.en[key] || key;
+    return (currentTranslations as any)[key] || (translations.en as any)[key] || key;
   };
 
   return (
