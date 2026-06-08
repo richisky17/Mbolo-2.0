@@ -58,7 +58,7 @@ const LearnPage = async () => {
   <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-emerald-800/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
 </div>
       
-      */<div className="md:hidden border-b-2 border-emerald-100 py-3">/*
+      <div className="md:hidden border-b-2 border-emerald-100 py-3">
         <UserProgress
           activeCourse={userProgress.activeCourse}
           hearts={userProgress.hearts}
