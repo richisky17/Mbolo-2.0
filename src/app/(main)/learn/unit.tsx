@@ -52,9 +52,9 @@ const Unit = ({
                   className={cn(
                     "absolute top-[70px] w-0.5 transition-all duration-500 z-0",
                     {
-                      "h-8 bg-gradient-to-b from-emerald-400 to-teal-400": isCompleted || isCurrent,
-                      "h-8 bg-gradient-to-b from-emerald-300/50 to-teal-300/50": isNext && !isLocked,
-                      "h-8 bg-neutral-200": !isCompleted && !isCurrent && !isNext,
+                       "h-8 bg-gradient-to-b from-emerald-400 to-teal-400": isCompleted || isCurrent,
+                       "h-8 bg-gradient-to-b from-emerald-600/50 to-teal-600/50": isNext && !isLocked,
+                       "h-8 bg-gray-700": !isCompleted && !isCurrent && !isNext,
                     }
                   )}
                   style={{

@@ -30,7 +30,10 @@ export const units = pgTable("units", {
     .references(() => courses.id, { onDelete: "cascade" })
     .notNull(),
   order: integer("order").notNull(),
+  //imageUrl: text("image_url"),   // <- Nueva columna, con coma al final
 });
+
+
 
 export const unitsRelations = relations(units, ({ many, one }) => ({
   course: one(courses, {
@@ -268,3 +271,4 @@ export const pronunciationTextsRelations = relations(
     }),
   })
 );
+

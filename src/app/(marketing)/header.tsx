@@ -37,7 +37,10 @@ const Header = () => {
 
         {/* Navigation Links - Desktop */}
         <nav className="hidden md:flex items-center gap-8">
-       
+          {/* Nuevo enlace: Región */}
+          <Link href="/select-country" className="text-gray-300 hover:text-emerald-400 font-medium transition-colors">
+            Región
+          </Link>
           <Link href="/about-us" className="text-gray-300 hover:text-emerald-400 font-medium transition-colors">
             {t("header.about")}
           </Link>

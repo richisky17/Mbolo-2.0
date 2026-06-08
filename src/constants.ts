@@ -4,17 +4,16 @@ export const DEFAULT_POINTS_START = 0;
 export const POINTS_PER_CHALLENGE = 10;
 
 export const quests = [
- 
   {
-    title: "Gana 1000 XP",
+    title: "Gana 1.000 XP",
     value: 1000,
   },
   {
-    title: "Gana 3000 XP",
+    title: "Gana 3.000 XP",
     value: 3000,
   },
   {
-    title: "Gana 5000 XP",
+    title: "Gana 5.000 XP",
     value: 5000,
   },
   {
@@ -31,17 +30,17 @@ export const sidebarItems = [
   },
   {
     href: "/pronunciation",
-    label: "Prononciation",
-    iconSrc: "/quests.svg", // You can add a pronunciation icon later
+    label: "Pronunciación",
+    iconSrc: "/quests.svg",
   },
   {
     href: "/leaderboard",
     label: "Clasificación",
     iconSrc: "/leaderboard.svg",
   },
-    {
-    href: "/Juegos",
-    label: "Juegos",
+  {
+    href: "/games",
+    label: "Juegos 🔒",    // 👈 añadimos candado
     iconSrc: "/games.svg",
   },
   {

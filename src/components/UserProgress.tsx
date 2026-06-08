@@ -20,40 +20,39 @@ const UserProgress = ({
 }: UserProgressProps) => (
   <div className="flex w-full items-center justify-between md:gap-x-0.5 lg:gap-x-2">
     <Link href="/courses">
-      <Button variant="defaultOutline">
+      <Button variant="defaultOutline" className="border-gray-700 bg-gray-900 hover:bg-gray-800">
         <Image
           alt={activeCourse.title}
           src={activeCourse.imageSrc}
           height={32}
           width={32}
-          className="rounded-md border"
+          className="rounded-md border border-gray-700"
         />
       </Button>
     </Link>
 
     <Link href="/shop">
-      <Button variant="defaultOutline" className="text-orange-500">
+      <Button variant="defaultOutline" className="border-gray-700 bg-gray-900 hover:bg-gray-800 text-orange-400">
         <Image
           alt="Points"
           src="/points.svg"
           height={28}
           width={28}
-          className="mr-2"
+          
         />
         {points}
       </Button>
     </Link>
 
     <Link href="/shop">
-      <Button variant="defaultOutline" className="text-rose-500">
+      <Button variant="defaultOutline" className="border-gray-700 bg-gray-900 hover:bg-gray-800 text-rose-400">
         <Image
           alt="Hearts"
           src="/heart.svg"
           height={22}
           width={22}
-          className="mr-2"
+          
         />
-
         {hasActiveSubscription ? (
           <InfinityIcon className="h-4 w-4 stroke-[3]" />
         ) : (

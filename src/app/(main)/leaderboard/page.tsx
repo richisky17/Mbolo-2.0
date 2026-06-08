@@ -9,7 +9,7 @@ import {
 } from "@/server/db/queries";
 
 import { Separator } from "@/components/ui";
-import { Avatar, AvatarImage } from "@/components/ui/Avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/Avatar";
 
 import {
   FeedWrapper,
@@ -39,8 +39,9 @@ const LeaderboardPage = async () => {
   const isPro = !!userSubscription?.isActive;
 
   return (
-    <div className="flex flex-col md:flex-row md:gap-4 lg:gap-[48px] px-6">
-      <div className="sticky top-[60px] bg-white md:hidden border-b-2 z-50 py-3">
+    <div className="flex flex-col md:flex-row md:gap-4 lg:gap-[48px] px-6 bg-black min-h-screen">
+      {/* Mobile user progress - oscuro */}
+      <div className="sticky top-[60px] bg-black/80 backdrop-blur-sm md:hidden border-b border-gray-800 z-50 py-3">
         <UserProgress
           activeCourse={userProgress.activeCourse}
           hearts={userProgress.hearts}
@@ -58,39 +59,43 @@ const LeaderboardPage = async () => {
             width={90}
           />
 
-          <h1 className="text-center font-bold text-neutral-800 text-2xl my-6">
+          <h1 className="text-center font-bold text-white text-2xl my-6">
             Tabla de clasificación
           </h1>
 
-          <p className="text-muted-foreground text-center text-balance text-lg mb-6">
-            Comprueba cuál es tu nivel respecto al resto de alumnos de la comunidad..
+          <p className="text-gray-300 text-center text-balance text-lg mb-6">
+            Comprueba cuál es tu nivel respecto al resto de alumnos de la comunidad.
           </p>
 
-          <Separator className="mb-4 h-0.5 rounded-full" />
+          <Separator className="mb-4 h-0.5 rounded-full bg-gray-800" />
 
           {leaderboard.map((userProgress, index) => (
             <div
               key={userProgress.userId}
-              className="flex items-center justify-between w-full rounded-xl gap-4 hover:bg-gray-200/50 p-2 px-4"
+              className="flex items-center justify-between w-full rounded-xl gap-4 hover:bg-gray-800/50 transition-colors p-2 px-4"
             >
-              <p className="font-bold text-lime-700">{index + 1}</p>
+              <p className="font-bold text-emerald-400 w-8 text-center">
+                {index + 1}
+              </p>
 
               <div className="flex items-center w-[87%] md:w-[84%] lg:w-[90%] gap-2">
-                <Avatar className="border bg-green-500 h-8 w-8 lg:h-10 lg:w-10">
+                <Avatar className="border border-gray-700 bg-gray-800 h-8 w-8 lg:h-10 lg:w-10">
                   <AvatarImage
                     className="object-cover"
                     src={userProgress.userImageSrc}
                   />
+                  <AvatarFallback className="text-white bg-gray-700">
+                    {userProgress.userName?.[0] || "U"}
+                  </AvatarFallback>
                 </Avatar>
 
-                <p className="flex-1 font-bold text-neutral-800">
-                  {user?.id === userProgress.userId &&
-                  user.firstName !== userProgress.userName
+                <p className="flex-1 font-bold text-white">
+                  {user?.id === userProgress.userId && user.firstName !== userProgress.userName
                     ? user.firstName || "Anon"
                     : userProgress.userName}
                 </p>
 
-                <p className="text-muted-foreground text-sm lg:text-base">
+                <p className="text-emerald-400 text-sm lg:text-base font-semibold">
                   {userProgress.points} XP
                 </p>
               </div>

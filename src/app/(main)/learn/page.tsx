@@ -51,15 +51,14 @@ const LearnPage = async () => {
   const isPro = !!userSubscription?.isActive;
 
   return (
-    <div className="flex flex-col md:flex-row md:gap-4 lg:gap-[48px] px-6 bg-gradient-to-br from-emerald-50/30 via-white to-teal-50/30 min-h-screen relative overflow-hidden">
-      {/* Animated background elements */}
+<div className="flex flex-col md:flex-row md:gap-4 lg:gap-[48px] px-6 bg-black min-h-screen relative overflow-hidden">      {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-200/20 rounded-full blur-3xl animate-blob" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
-        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-emerald-100/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
-      </div>
+  <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-900/20 rounded-full blur-3xl animate-blob" />
+  <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-900/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
+  <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-emerald-800/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
+</div>
       
-      <div className="md:hidden border-b-2 border-emerald-100 bg-white/80 backdrop-blur-sm py-3">
+      */<div className="md:hidden border-b-2 border-emerald-100 py-3">/*
         <UserProgress
           activeCourse={userProgress.activeCourse}
           hearts={userProgress.hearts}

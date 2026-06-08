@@ -21,8 +21,9 @@ const ShopPage = async () => {
   const isPro = !!userSubscription?.isActive;
 
   return (
-    <div className="flex flex-col md:flex-row md:gap-4 lg:gap-[48px] px-6">
-      <div className="sticky top-[60px] bg-white md:hidden border-b-2 z-50 py-3">
+    <div className="flex flex-col md:flex-row md:gap-4 lg:gap-[48px] px-6 bg-black min-h-screen">
+      {/* Mobile user progress */}
+      <div className="sticky top-[60px] bg-black/80 backdrop-blur-sm md:hidden border-b border-gray-800 z-50 py-3">
         <UserProgress
           activeCourse={userProgress.activeCourse}
           hearts={userProgress.hearts}
@@ -33,13 +34,18 @@ const ShopPage = async () => {
 
       <FeedWrapper>
         <div className="flex flex-col items-center w-full mt-7">
-          <Image src="/shop.svg" alt="Shop" height={90} width={90} />
+          <Image
+            src="/shop.svg"
+            alt="Shop"
+            height={90}
+            width={90}
+          />
 
-          <h1 className="text-center font-bold text-neutral-800 text-2xl my-6">
+          <h1 className="text-center font-bold text-white text-2xl my-6">
             Tienda
           </h1>
 
-          <p className="text-muted-foreground text-center text-balance text-lg mb-6">
+          <p className="text-gray-300 text-center text-balance text-lg mb-6">
             Gasta tus puntos en cosas geniales.
           </p>
 

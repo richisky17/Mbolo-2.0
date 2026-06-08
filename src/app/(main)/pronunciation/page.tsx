@@ -9,9 +9,6 @@ import { FeedWrapper, StickyWrapper, UserProgress } from "@/components";
 
 async function getPronunciationTexts(courseId: number | null) {
   try {
-    // Fetch texts that are either:
-    // 1. Matching the user's courseId
-    // 2. Global texts (courseId = null) - available for all courses
     const data = await db.query.pronunciationTexts.findMany({
       where: courseId
         ? or(
@@ -20,16 +17,15 @@ async function getPronunciationTexts(courseId: number | null) {
           )
         : isNull(pronunciationTexts.courseId),
       orderBy: [asc(pronunciationTexts.order)],
-      limit: 100, // Increased limit to show all texts
+      limit: 100,
     });
-
     if (data && data.length > 0) {
       return data.map((item) => item.text);
     }
   } catch (error) {
     console.error("Error al obtener los textos de pronunciación:", error);
   }
-  return []; // Return empty array instead of fallback texts
+  return [];
 }
 
 export default async function PronunciationPage() {
@@ -41,29 +37,28 @@ export default async function PronunciationPage() {
 
   const practiceTexts = await getPronunciationTexts(userProgress.activeCourseId);
 
-  // If no texts exist, show message to admin
   if (practiceTexts.length === 0) {
     return (
-      <div className="flex flex-col md:flex-row md:gap-4 lg:gap-[48px] px-6 bg-gradient-to-br from-emerald-50/30 via-white to-teal-50/30 min-h-screen">
+      <div className="flex flex-col md:flex-row md:gap-4 lg:gap-[48px] px-6 bg-black min-h-screen">
         <FeedWrapper>
           <div className="my-8 space-y-8">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">
+              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">
                 Entrenador de pronunciación
               </h1>
-              <p className="text-gray-600 text-lg">
+              <p className="text-gray-300 text-lg">
                 Practica tu pronunciación con comentarios basados en inteligencia artificial.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 border-2 border-emerald-200 shadow-lg text-center">
+            <div className="bg-gray-900/50 rounded-2xl p-8 border border-gray-800 text-center">
               <div className="max-w-md mx-auto space-y-4">
                 <div className="text-6xl mb-4">📝</div>
-                <h2 className="text-2xl font-bold text-gray-800">No hay textos de práctica disponibles.</h2>
-                <p className="text-gray-600">
+                <h2 className="text-2xl font-bold text-white">No hay textos de práctica disponibles.</h2>
+                <p className="text-gray-300">
                   Los textos para practicar la pronunciación aún no se han creado. Pida al administrador que añada textos de práctica en el panel de administración.
                 </p>
-                <p className="text-sm text-gray-500 mt-4">
+                <p className="text-sm text-gray-400 mt-4">
                   Los administradores pueden generar textos utilizando IA o crearlos manualmente.
                 </p>
               </div>
@@ -85,20 +80,20 @@ export default async function PronunciationPage() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row md:gap-4 lg:gap-[48px] px-6 bg-gradient-to-br from-emerald-50/30 via-white to-teal-50/30 min-h-screen">
+    <div className="flex flex-col md:flex-row md:gap-4 lg:gap-[48px] px-6 bg-black min-h-screen">
       <FeedWrapper>
         <div className="my-8 space-y-8">
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">
+            <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">
               Entrenador de pronunciación
             </h1>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-300 text-lg">
               Practica tu pronunciación con comentarios basados en inteligencia artificial.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border-2 border-emerald-200 shadow-lg">
-            <h2 className="text-xl font-bold text-gray-800 mb-4">
+          <div className="bg-gray-900/50 rounded-2xl p-6 border border-gray-800">
+            <h2 className="text-xl font-bold text-white mb-4">
               Frases para practicar
             </h2>
             <div className="space-y-4">
@@ -126,4 +121,3 @@ export default async function PronunciationPage() {
     </div>
   );
 }
-

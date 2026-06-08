@@ -146,6 +146,7 @@ export default function RootLayout({
       <ClerkProvider appearance={clerkAppearance}>
         <body
           className={cn(
+            "bg-black min-h-screen", //
             "scrollbar-thumb-gray scrollbar-thumb-rounded scrollbar-track-gray-lighter scrollbar-w-4 scrolling-touch",
             font.className
           )}

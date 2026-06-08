@@ -79,7 +79,7 @@ export default {
   "footer.support.privacy": "Política de Privacidad",
   "footer.support.terms": "Términos de Servicio",
   "footer.support.cookies": "Política de Cookies",
-  "footer.languages.title": "Lengua Populares",
+  "footer.languages.title": "Lenguas Populares",
   "footer.languages.spanish": "Fang",
   "footer.languages.french": "Bubi",
   "footer.languages.japanese": "Ndowe",

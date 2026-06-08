@@ -211,7 +211,7 @@ const Quiz = ({
             className="block lg:hidden"
           />
 
-          <h1 className="text-xl lg:text-3xl font-bold text-neutral-700">
+          <h1 className="text-lg lg:text-3xl lg:text-start self-center font-bold text-white">
             ¡Buen trabajo! <br /> Has completado la lección.
           </h1>
 

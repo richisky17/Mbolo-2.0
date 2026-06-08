@@ -30,31 +30,26 @@ const Card = ({
 }: CardProps) => {
   const [audio, _, controls] = useAudio({ src: audioSrc ?? "" });
 
-  // useCallback() hook returns a memoized version of `handleClick` that only changes if one of the dependencies has changed
-  // memoization is essential here because `handleClick` is being used as a dependency in another hook
   const handleClick = useCallback(() => {
     if (disabled) return;
-
     controls.play();
     onClick();
   }, [disabled, onClick, controls]);
 
-  // it is important for `useKey` to provide a stable reference to the callback function
-  // useCallback() hook ensures that the `handleClick` reference remains stable across renders unless its dependencies change
   useKey(shortcut, handleClick, {}, [handleClick]);
 
   return (
     <div
       onClick={handleClick}
       className={cn(
-        "h-full border-2 rounded-xl border-b-4 hover:bg-black/5 cursor-pointer active:border-b-2 p-4 lg:p-6",
+        "h-full border-2 rounded-xl border-b-4 hover:bg-gray-800/50 cursor-pointer active:border-b-2 p-4 lg:p-6 bg-gray-900/80",
         {
-          "border-sky-300 bg-sky-100 hover:bg-sky-100": selected,
-          "border-green-300 bg-green-100 hover:bg-green-100":
+          "border-emerald-500 bg-emerald-900/50 text-white": selected && status === "none",
+          "border-green-500 bg-green-900/50 text-white":
             selected && status === "correct",
-          "border-rose-300 bg-rose-100 hover:bg-rose-100":
+          "border-rose-500 bg-rose-900/50 text-white":
             selected && status === "wrong",
-          "pointer-events-none hover:bg-white": disabled,
+          "pointer-events-none hover:bg-gray-900/80": disabled,
           "w-full lg:p-3": type === "ASSIST",
         }
       )}
@@ -75,10 +70,10 @@ const Card = ({
         {type === "ASSIST" && <div />}
 
         <p
-          className={cn("text-neutral-600 text-sm lg:text-base", {
-            "text-sky-500": selected,
-            "text-green-500": selected && status === "correct",
-            "text-rose-500": selected && status === "wrong",
+          className={cn("text-gray-200 text-sm lg:text-base", {
+            "text-emerald-300": selected && status === "none",
+            "text-green-400": selected && status === "correct",
+            "text-rose-400": selected && status === "wrong",
           })}
         >
           {text}
@@ -86,12 +81,13 @@ const Card = ({
 
         <div
           className={cn(
-            "flex items-center justify-center rounded-lg border-2 text-neutral-400 lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] lg:text-[15px] text-xs font-semibold",
+            "flex items-center justify-center rounded-lg border-2 text-gray-400 lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] lg:text-[15px] text-xs font-semibold",
             {
-              "border-sky-300 text-sky-500": selected,
-              "border-green-500 text-green-500":
+              "border-emerald-500 text-emerald-400": selected && status === "none",
+              "border-green-500 text-green-400":
                 selected && status === "correct",
-              "border-rose-500 text-rose-500": selected && status === "wrong",
+              "border-rose-500 text-rose-400":
+                selected && status === "wrong",
             }
           )}
         >

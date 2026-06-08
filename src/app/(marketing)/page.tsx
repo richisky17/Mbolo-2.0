@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Apple, Smartphone } from "lucide-react";
 import Image from "next/image";
@@ -19,6 +21,27 @@ import {
 
 export default function HomePage() {
   const { t } = useLanguage();
+  const router = useRouter();
+  const [isChecking, setIsChecking] = useState(true);
+
+  useEffect(() => {
+    const selected = localStorage.getItem("selectedCountry");
+    if (selected !== "GQ") {
+      router.push("/select-country");
+    } else {
+      setIsChecking(false);
+    }
+  }, [router]);
+
+  // Mostrar un loader mientras se verifica
+  if (isChecking) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-black">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-emerald-500" />
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col w-full bg-black">
       {/* Hero Section */}
@@ -190,7 +213,7 @@ export default function HomePage() {
         </div>
       </section>
 
-            {/* Mobile Apps Section - Aprende Sobre la Marcha */}
+      {/* Mobile Apps Section - Aprende Sobre la Marcha */}
       <section className="py-20 px-6 bg-black relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-r from-emerald-600/5 to-teal-600/5 rounded-full blur-3xl" />
 
@@ -198,7 +221,6 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Columna izquierda - Contenido textual y formulario */}
             <div className="space-y-8">
-
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 {t("mobile.title") || "Aprende Sobre la Marcha"}{" "}
                 <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
@@ -251,94 +273,82 @@ export default function HomePage() {
               </div>
 
               {/* Botones de tiendas */}
-<div className="flex flex-wrap gap-4">
-  {/* App Store */}
-  <div className="bg-gray-900 rounded-xl p-3 flex items-center gap-3 border border-gray-800 hover:border-emerald-500 transition-colors cursor-pointer">
-    <Apple className="w-8 h-8 text-white" />
-    <div>
-      <p className="text-xs text-gray-400">{t("mobile.app.getin") || "Descárgalo en"}</p>
-      <p className="text-sm font-semibold text-white">{t("mobile.app.apple") || "App Store"}</p>
-    </div>
-  </div>
-  
-  {/* Google Play */}
-  <div className="bg-gray-900 rounded-xl p-3 flex items-center gap-3 border border-gray-800 hover:border-emerald-500 transition-colors cursor-pointer">
-    <Smartphone className="w-8 h-8 text-white" />
-    <div>
-      <p className="text-xs text-gray-400">{t("mobile.app.getin") || "Descárgalo en"}</p>
-      <p className="text-sm font-semibold text-white">{t("mobile.app.google") || "Google Play"}</p>
-    </div>
-  </div>
-</div>
-              
+              <div className="flex flex-wrap gap-4">
+                <div className="bg-gray-900 rounded-xl p-3 flex items-center gap-3 border border-gray-800 hover:border-emerald-500 transition-colors cursor-pointer">
+                  <Apple className="w-8 h-8 text-white" />
+                  <div>
+                    <p className="text-xs text-gray-400">{t("mobile.app.getin") || "Descárgalo en"}</p>
+                    <p className="text-sm font-semibold text-white">{t("mobile.app.apple") || "App Store"}</p>
+                  </div>
+                </div>
+                <div className="bg-gray-900 rounded-xl p-3 flex items-center gap-3 border border-gray-800 hover:border-emerald-500 transition-colors cursor-pointer">
+                  <Smartphone className="w-8 h-8 text-white" />
+                  <div>
+                    <p className="text-xs text-gray-400">{t("mobile.app.getin") || "Descárgalo en"}</p>
+                    <p className="text-sm font-semibold text-white">{t("mobile.app.google") || "Google Play"}</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Columna derecha - Imagen estática FON SIN FONDO.png */}
-                        {/* Columna derecha - Imagen escalada 250% como fondo */}
             <div className="relative flex justify-center items-center overflow-visible">
               <div className="relative w-full flex justify-center items-center">
-                {/* Efecto de glow detrás */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-emerald- 950 to-teal-950 rounded-full blur-2xl -z-10" />
-                
-                {/* Imagen escalada 250% con opacidad para que sea fondo */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-emerald-950 to-teal-950 rounded-full blur-2xl -z-10" />
                 <div className="transform scale-[1.1] origin-center">
-  <Image
-    src="/FON SIN FONDO.png"
-    alt="Fondo decorativo"
-    width={400}
-    height={600}
-    className="w-auto h-auto max-w-none opacity-80 pointer-events-none"
-    priority
-  />
-</div>
+                  <Image
+                    src="/FON SIN FONDO.png"
+                    alt="Fondo decorativo"
+                    width={400}
+                    height={600}
+                    className="w-auto h-auto max-w-none opacity-80 pointer-events-none"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Nueva Sección Identidad - 40% texto, 60% imagen, imagen escalada al 400% */}
-<section className="py-20 px-6 bg-black relative overflow-hidden">
-  <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-900 rounded-full mix-blend-overlay filter blur-3xl opacity-10" />
-  <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-900 rounded-full mix-blend-overlay filter blur-3xl opacity-10" />
+      {/* Nueva Sección Identidad */}
+      <section className="py-20 px-6 bg-black relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-900 rounded-full mix-blend-overlay filter blur-3xl opacity-10" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-900 rounded-full mix-blend-overlay filter blur-3xl opacity-10" />
 
-  <div className="mx-auto max-w-7xl relative z-10">
-    <div className="grid md:grid-cols-[40%_60%] gap-12 items-center">
-      
-      {/* Columna izquierda - Texto */}
-      <div className="text-left space-y-6">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full text-emerald-300 text-sm font-medium">
-          <Globe className="w-4 h-4 fill-emerald-400 text-emerald-400" />
-          UNA COMUNIDAD GLOBAL
-        </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-          Juntos preservamos nuestra identidad
-        </h2>
-        <p className="text-lg text-gray-300 max-w-lg">
-          Conectando estudiantes con habitantes nativos de todo el mundo que comparten su amor por nuestras lenguas.
-        </p>
-      </div>
-      
-      {/* Columna derecha - Imagen con escala adicional (400% del original) */}
-      <div className="flex justify-end">
-        <div className="relative w-full transform scale-200 origin-right transform-gpu">
-          {/* Glow más grande para acompañar la escala */}
-          <div className="absolute -inset-2 bg-gradient-to-r from-emerald-950 to-teal-990 rounded-full blur-3xl opacity-30" />
-          <div className="relative rounded-1xl overflow-hidden">
-            <Image
-              src="/MAPA_CENTRADO.png"
-              alt="Mapa de Guinea Ecuatorial con lenguas"
-              width={600}
-              height={400}
-              className="w-full h-auto object-cover"
-              priority
-            />
+        <div className="mx-auto max-w-7xl relative z-10">
+          <div className="grid md:grid-cols-[40%_60%] gap-12 items-center">
+            <div className="text-left space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full text-emerald-300 text-sm font-medium">
+                <Globe className="w-4 h-4 fill-emerald-400 text-emerald-400" />
+                UNA COMUNIDAD GLOBAL
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                Juntos preservamos nuestra identidad
+              </h2>
+              <p className="text-lg text-gray-300 max-w-lg">
+                Conectando estudiantes con habitantes nativos de todo el mundo que comparten su amor por nuestras lenguas.
+              </p>
+            </div>
+            
+            <div className="flex justify-end">
+              <div className="relative w-full transform scale-200 origin-right transform-gpu">
+                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-950 to-teal-990 rounded-full blur-3xl opacity-30" />
+                <div className="relative rounded-1xl overflow-hidden">
+                  <Image
+                    src="/MAPA_CENTRADO.png"
+                    alt="Mapa de Guinea Ecuatorial con lenguas"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
     </div>
   );
 }

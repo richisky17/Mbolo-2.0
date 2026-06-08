@@ -11,15 +11,18 @@ const CoursesPage = async () => {
   ]);
 
   return (
-    <div className="mx-auto h-full max-w-[912px] px-6 py-8 pb-[50px]">
-      <h1 className="text-2xl font-bold text-neutral-700">Language Courses</h1>
+    <div className="mx-auto h-full max-w-[1200px] px-6 py-8 pb-[50px]">
+      <h1 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center md:text-left">
+        Elige tu curso
+      </h1>
+
       {courses.length === 0 ? (
-        <div className="flex flex-col items-center justify-center gap-4 mt-10 p-8 border-2 border-dashed rounded-xl">
-          <p className="text-xl text-neutral-500 font-semibold">
-            No courses available yet.
+        <div className="flex flex-col items-center justify-center gap-4 mt-10 p-8 border border-gray-700 rounded-xl bg-gray-900/50">
+          <p className="text-xl text-gray-300 font-semibold">
+            No hay cursos disponibles aún.
           </p>
-          <p className="text-sm text-neutral-400">
-            Please check back later or contact support.
+          <p className="text-sm text-gray-400">
+            Por favor, vuelve más tarde o contacta con soporte.
           </p>
         </div>
       ) : (

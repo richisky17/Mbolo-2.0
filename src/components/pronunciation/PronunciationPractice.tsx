@@ -42,7 +42,6 @@ export default function PronunciationPractice({
     };
   }, [audioUrl, correctPronunciationUrl]);
 
-  // Load correct pronunciation audio when component mounts
   useEffect(() => {
     loadCorrectPronunciation();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -58,7 +57,7 @@ export default function PronunciationPractice({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           text: targetText,
-          voice: "nova", // Natural female voice - you can make this configurable
+          voice: "nova",
         }),
       });
 
@@ -69,7 +68,6 @@ export default function PronunciationPractice({
       const data = await response.json();
       
       if (data.audio) {
-        // Convert base64 to blob
         const binaryString = atob(data.audio);
         const bytes = new Uint8Array(binaryString.length);
         for (let i = 0; i < binaryString.length; i++) {
@@ -81,7 +79,6 @@ export default function PronunciationPractice({
       }
     } catch (error) {
       console.error("Error loading correct pronunciation:", error);
-      // Don't show error toast - fail silently if API not configured
     } finally {
       setIsLoadingCorrectAudio(false);
     }
@@ -169,7 +166,6 @@ export default function PronunciationPractice({
       const data = await response.json();
       setResult(data);
 
-      // Save to database
       await fetch("/api/pronunciation/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -195,7 +191,6 @@ export default function PronunciationPractice({
 
       toast.success(`Puntuación de pronunciación: ${data.score}%`);
       
-      // Trigger progress refresh in parent component
       window.dispatchEvent(new CustomEvent('pronunciation-practice-completed'));
     } catch (error) {
       console.error("Error al analizar la pronunciación:", error);
@@ -229,12 +224,12 @@ export default function PronunciationPractice({
 
   return (
     <div className="w-full space-y-6">
-      {/* Target Text */}
-      <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-4 sm:p-6 border-2 border-emerald-200">
+      {/* Target Text - Dark mode */}
+      <div className="bg-gradient-to-r from-gray-900/50 to-gray-950/50 rounded-2xl p-4 sm:p-6 border border-gray-800">
         <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-emerald-700 mb-2">Practique diciendo:</p>
-            <p className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 break-words">{targetText}</p>
+            <p className="text-sm font-semibold text-emerald-400 mb-2">Practique diciendo:</p>
+            <p className="text-lg sm:text-xl md:text-2xl font-bold text-white break-words">{targetText}</p>
           </div>
           
           {/* Correct Pronunciation Button */}
@@ -244,7 +239,7 @@ export default function PronunciationPractice({
               <Button
                 disabled
                 variant="secondaryOutline"
-                className="border-emerald-300 text-emerald-600 w-full sm:w-[140px] sm:min-w-[140px]"
+                className="border-gray-700 text-gray-300 w-full sm:w-[140px] sm:min-w-[140px]"
               >
                 <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                 Cargando...
@@ -254,7 +249,7 @@ export default function PronunciationPractice({
                 <Button
                   onClick={pauseCorrectPronunciation}
                   variant="secondaryOutline"
-                  className="border-emerald-300 text-emerald-600 hover:bg-emerald-50 w-full sm:w-[140px] sm:min-w-[140px]"
+                  className="border-gray-700 text-emerald-400 hover:bg-gray-800 w-full sm:w-[140px] sm:min-w-[140px]"
                 >
                   <Pause className="h-4 w-4 mr-2" />
                   Pausa
@@ -263,7 +258,7 @@ export default function PronunciationPractice({
                 <Button
                   onClick={playCorrectPronunciation}
                   variant="secondaryOutline"
-                  className="border-emerald-300 text-emerald-600 hover:bg-emerald-50 w-full sm:w-[140px] sm:min-w-[140px]"
+                  className="border-gray-700 text-emerald-400 hover:bg-gray-800 w-full sm:w-[140px] sm:min-w-[140px]"
                 >
                   <Volume2 className="h-4 w-4 mr-2" />
                   <span className="sm:hidden">Escuchar correctamente</span>
@@ -274,7 +269,7 @@ export default function PronunciationPractice({
               <Button
                 onClick={loadCorrectPronunciation}
                 variant="secondaryOutline"
-                className="border-emerald-300 text-emerald-600 hover:bg-emerald-50 w-full sm:w-[140px] sm:min-w-[140px]"
+                className="border-gray-700 text-emerald-400 hover:bg-gray-800 w-full sm:w-[140px] sm:min-w-[140px]"
               >
                 <Volume2 className="h-4 w-4 mr-2" />
                 <span className="sm:hidden">Generar Audio</span>
@@ -286,7 +281,7 @@ export default function PronunciationPractice({
         </div>
       </div>
 
-      {/* Recording Controls */}
+      {/* Recording Controls - Dark mode */}
       <div className="flex flex-col items-center gap-4">
         {!hasRecorded ? (
           <div className="flex items-center gap-4">
@@ -309,12 +304,12 @@ export default function PronunciationPractice({
             )}
           </div>
         ) : (
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-wrap justify-center">
             <audio ref={audioRef} src={audioUrl || undefined} />
             <Button
               onClick={playAudio}
               variant="secondaryOutline"
-              className="border-emerald-300 text-emerald-600"
+              className="border-gray-700 text-emerald-400 hover:bg-gray-800"
             >
               <Play className="h-5 w-5 mr-2" />
               Play
@@ -322,7 +317,7 @@ export default function PronunciationPractice({
             <Button
               onClick={pauseAudio}
               variant="secondaryOutline"
-              className="border-emerald-300 text-emerald-600"
+              className="border-gray-700 text-emerald-400 hover:bg-gray-800"
             >
               <Pause className="h-5 w-5 mr-2" />
               Pausa
@@ -332,9 +327,9 @@ export default function PronunciationPractice({
               disabled={isProcessing}
               className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white"
             >
-              {isProcessing ? "Analyzing..." : "Analyze Pronunciation"}
+              {isProcessing ? "Analizando..." : "Analizar pronunciación"}
             </Button>
-            <Button onClick={reset} variant="secondaryOutline">
+            <Button onClick={reset} variant="secondaryOutline" className="border-gray-700 text-gray-300 hover:bg-gray-800">
               <RotateCcw className="h-5 w-5 mr-2" />
               Grabar de nuevo
             </Button>
@@ -342,7 +337,7 @@ export default function PronunciationPractice({
         )}
 
         {isRecording && (
-          <div className="flex items-center gap-2 text-rose-500 animate-pulse">
+          <div className="flex items-center gap-2 text-rose-400 animate-pulse">
             <div className="w-3 h-3 bg-rose-500 rounded-full"></div>
             <span className="font-semibold">Grabando...</span>
           </div>
@@ -350,37 +345,35 @@ export default function PronunciationPractice({
       </div>
 
       {/* Results */}
-      {result && (
-        <PronunciationFeedback result={result} />
-      )}
+      {result && <PronunciationFeedback result={result} />}
     </div>
   );
 }
 
 function PronunciationFeedback({ result }: { result: any }) {
   return (
-    <div className="bg-white rounded-2xl p-6 border-2 border-emerald-200 shadow-lg space-y-6">
+    <div className="bg-gray-900/50 rounded-2xl p-6 border border-gray-800 shadow-lg space-y-6">
       {/* Overall Score */}
       <div className="text-center">
         <div className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white w-24 h-24 text-3xl font-bold shadow-lg">
           {result.score}%
         </div>
-        <p className="text-lg font-semibold text-gray-700 mt-4">Puntuación global</p>
+        <p className="text-lg font-semibold text-gray-300 mt-4">Puntuación global</p>
       </div>
 
       {/* Detailed Scores */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <ScoreCard label="Accuracy" score={result.accuracy} />
-        <ScoreCard label="Fluency" score={result.fluency} />
-        <ScoreCard label="Completeness" score={result.completeness} />
-        <ScoreCard label="Intonation" score={result.intonationScore} />
+        <ScoreCard label="Precisión" score={result.accuracy} />
+        <ScoreCard label="Fluidez" score={result.fluency} />
+        <ScoreCard label="Completitud" score={result.completeness} />
+        <ScoreCard label="Entonación" score={result.intonationScore} />
       </div>
 
-      {/* Errors */}
+      {/* Errors - Dark mode */}
       {result.errors && result.errors.length > 0 && (
-        <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-4">
-          <p className="font-semibold text-amber-800 mb-2">Áreas a mejorar:</p>
-          <ul className="list-disc list-inside space-y-1 text-amber-700">
+        <div className="bg-amber-900/30 border border-amber-800 rounded-xl p-4">
+          <p className="font-semibold text-amber-300 mb-2">Áreas a mejorar:</p>
+          <ul className="list-disc list-inside space-y-1 text-amber-200">
             {result.errors.map((error: string, i: number) => (
               <li key={i}>{error}</li>
             ))}
@@ -388,21 +381,21 @@ function PronunciationFeedback({ result }: { result: any }) {
         </div>
       )}
 
-      {/* Phoneme Breakdown */}
+      {/* Phoneme Breakdown - Dark mode */}
       {result.phonemeDetails && result.phonemeDetails.length > 0 && (
         <div>
-          <p className="font-semibold text-gray-700 mb-3">Desglose de fonemas:</p>
+          <p className="font-semibold text-gray-300 mb-3">Desglose de fonemas:</p>
           <div className="space-y-2">
             {result.phonemeDetails.slice(0, 5).map((phoneme: any, i: number) => (
               <div key={i} className="flex items-center gap-4">
-                <span className="font-medium text-gray-600 w-32">{phoneme.phoneme}</span>
-                <div className="flex-1 bg-gray-200 rounded-full h-3">
+                <span className="font-medium text-gray-400 w-32">{phoneme.phoneme}</span>
+                <div className="flex-1 bg-gray-800 rounded-full h-3">
                   <div
                     className="bg-gradient-to-r from-emerald-500 to-teal-500 h-3 rounded-full transition-all"
                     style={{ width: `${phoneme.accuracy}%` }}
                   />
                 </div>
-                <span className="text-sm font-semibold text-gray-600 w-12">{phoneme.accuracy}%</span>
+                <span className="text-sm font-semibold text-gray-300 w-12">{phoneme.accuracy}%</span>
               </div>
             ))}
           </div>
@@ -420,18 +413,17 @@ function ScoreCard({ label, score }: { label: string; score: number }) {
   };
 
   return (
-    <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
-      <p className="text-sm font-semibold text-gray-600 mb-2">{label}</p>
+    <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
+      <p className="text-sm font-semibold text-gray-400 mb-2">{label}</p>
       <div className="flex items-center gap-2">
-        <div className="flex-1 bg-gray-200 rounded-full h-2">
+        <div className="flex-1 bg-gray-700 rounded-full h-2">
           <div
             className={`bg-gradient-to-r ${getColor(score)} h-2 rounded-full transition-all`}
             style={{ width: `${score}%` }}
           />
         </div>
-        <span className="text-sm font-bold text-gray-700">{score}%</span>
+        <span className="text-sm font-bold text-gray-300">{score}%</span>
       </div>
     </div>
   );
 }
-
