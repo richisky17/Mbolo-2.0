@@ -21,7 +21,7 @@ const SidebarItem = ({ href, label, iconSrc, hasActiveCourse }: SidebarItemProps
   const handleClick = () => {
     // Si es la ruta de juegos, mostramos mensaje y no hacemos nada más
     if (href === "/games") {
-      toast.info("🚧 Próximamente. ¡Estamos trabajando en ello! 🚧");
+      toast.info("Próximamente. ¡Estamos trabajando en ello!");
       return;
     }
 
